@@ -27,6 +27,7 @@
 	"devDependencies": {
 		"@biomejs/biome": "1.5.3",
 		"@s-ui/mono": "2.45.0",
-		"markdownlint": "0.33.0"
+		"markdownlint": "0.33.0",
+		"supabase": "1.145.4"
 	}
 }
