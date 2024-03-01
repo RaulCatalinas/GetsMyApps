@@ -9,6 +9,11 @@ import { getApps } from "@/services/get-apps";
 // Types
 import type { AppWithLogo } from "@/types/supabase";
 
+// Config
+import { configureCloudinary } from "@/config/cloudinary";
+
+configureCloudinary();
+
 let apps: AppWithLogo[] | void = [];
 let anErrorHasOccurred: boolean = false;
 

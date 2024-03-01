@@ -1,7 +1,8 @@
 // Config
 import { supabaseClient } from "@/config/supabase"
 
-// Cloudinary
+// Services
+import { optimizeImage } from "./optimize-image"
 
 export async function getLogo(appName: string) {
 	const { data } = await supabaseClient.storage
@@ -10,5 +11,5 @@ export async function getLogo(appName: string) {
 
 	const { publicUrl } = data
 
-	return publicUrl
+	return await optimizeImage(publicUrl)
 }

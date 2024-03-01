@@ -12,16 +12,18 @@ interface Props {
 const { apps } = Astro.props;
 ---
 
-<div class="flex flex-col md:flex-row gap-4 mt-4">
+<div
+  class="grid grid-cols-2 place-content-center max-sm:grid-cols-1 gap-4 mt-4"
+>
   {
     apps.map((app) => {
       const { name, description, githubRepoURL, logoURL, alternativeText } =
         app;
 
       return (
-        <div class="flex flex-col items-center justify-center bg-white rounded-lg shadow-md mt-4 p-4 w-max">
-          <h1 class="text-xl font-semibold">{name}</h1>
-          <p class="text-gray-700">{description}</p>
+        <div class="bg-white rounded-lg shadow-md mt-4 p-4 w-max">
+          <h1 class="text-xl font-semibold text-center text-balance">{name}</h1>
+          <p class="text-gray-700 text-center text-pretty">{description}</p>
           <img
             src={logoURL}
             alt={alternativeText}
