@@ -18,14 +18,14 @@ export async function getApps(): Promise<void | AppWithLogo[]> {
 
 	return await Promise.all(
 		data.map(async app => {
-			const { name, description, githubRepoURL, alternativeText } = app
+			const { name, description, githubRepoName, alternativeText } = app
 
 			const logoURL = await getLogo(name)
 
 			return {
 				name,
 				description,
-				githubRepoURL,
+				githubRepoName,
 				logoURL,
 				alternativeText
 			}

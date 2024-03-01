@@ -1,6 +1,6 @@
 ---
 // Components
-import LinkAsButton from "../links/LinkAsButton.astro";
+import DownloadButton from "../buttons/DownloadButton";
 
 // Types
 import type { AppWithLogo } from "@/types/supabase";
@@ -13,15 +13,15 @@ const { apps } = Astro.props;
 ---
 
 <div
-  class="grid grid-cols-2 place-content-center max-sm:grid-cols-1 gap-4 mt-4"
+  class="grid grid-cols-2 max-sm:grid-cols-1 gap-4 mt-4 place-content-center"
 >
   {
     apps.map((app) => {
-      const { name, description, githubRepoURL, logoURL, alternativeText } =
+      const { name, description, logoURL, alternativeText, githubRepoName } =
         app;
 
       return (
-        <div class="bg-white rounded-lg shadow-md mt-4 p-4 w-max">
+        <article class="bg-white rounded-lg shadow-md mt-4 p-4 w-max">
           <h1 class="text-xl font-semibold text-center text-balance">{name}</h1>
           <p class="text-gray-700 text-center text-pretty">{description}</p>
           <img
@@ -31,16 +31,10 @@ const { apps } = Astro.props;
             width="125"
             height="125"
           />
-          <div class="flex items-center justify-center mt-4 gap-2">
-            <LinkAsButton
-              href={githubRepoURL}
-              text="View source code on GitHub"
-            />
-            <button class="bg-green-500 hover:bg-green-600 hover:scale-105 active:scale-90 text-white font-bold py-2 px-4 rounded">
-              Download
-            </button>
+          <div class="flex items-center justify-center mt-4">
+            <DownloadButton githubRepoName={githubRepoName} client:load />
           </div>
-        </div>
+        </article>
       );
     })
   }

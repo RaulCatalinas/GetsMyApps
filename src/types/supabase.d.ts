@@ -1,4 +1,4 @@
-type Json =
+export type Json =
 	| string
 	| number
 	| boolean
@@ -6,7 +6,7 @@ type Json =
 	| { [key: string]: Json | undefined }
 	| Json[]
 
-type Database = {
+export type Database = {
 	public: {
 		Tables: {
 			Apps: {
@@ -14,7 +14,7 @@ type Database = {
 					alternativeText: string
 					created_at: string
 					description: string
-					githubRepoURL: string
+					githubRepoName: string
 					id: string
 					name: string
 				}
@@ -22,7 +22,7 @@ type Database = {
 					alternativeText: string
 					created_at?: string
 					description: string
-					githubRepoURL: string
+					githubRepoName: string
 					id?: string
 					name: string
 				}
@@ -30,7 +30,7 @@ type Database = {
 					alternativeText?: string
 					created_at?: string
 					description?: string
-					githubRepoURL?: string
+					githubRepoName?: string
 					id?: string
 					name?: string
 				}
@@ -52,7 +52,7 @@ type Database = {
 	}
 }
 
-type Tables<
+export type Tables<
 	PublicTableNameOrOptions extends
 		| keyof (Database["public"]["Tables"] & Database["public"]["Views"])
 		| { schema: keyof Database },
@@ -77,7 +77,7 @@ type Tables<
 			: never
 	  : never
 
-type TablesInsert<
+export type TablesInsert<
 	PublicTableNameOrOptions extends
 		| keyof Database["public"]["Tables"]
 		| { schema: keyof Database },
@@ -98,7 +98,7 @@ type TablesInsert<
 			: never
 	  : never
 
-type TablesUpdate<
+export type TablesUpdate<
 	PublicTableNameOrOptions extends
 		| keyof Database["public"]["Tables"]
 		| { schema: keyof Database },
@@ -119,7 +119,7 @@ type TablesUpdate<
 			: never
 	  : never
 
-type Enums<
+export type Enums<
 	PublicEnumNameOrOptions extends
 		| keyof Database["public"]["Enums"]
 		| { schema: keyof Database },
@@ -134,7 +134,7 @@ type Enums<
 
 export type App = Pick<
 	Database["public"]["Tables"]["Apps"]["Row"],
-	"name" | "description" | "alternativeText" | "githubRepoURL"
+	"name" | "description" | "alternativeText" | "githubRepoName"
 >
 
 export type AppWithLogo = App & { logoURL: string }
