@@ -12,7 +12,7 @@ Contributions of all types are welcome, including:
 
 ## To-do's
 
-- [ ] Creating the GUI using Tailwind for the styles
+- [x] Creating the GUI using Tailwind for the styles
 - [ ] Add testing
 - [ ] Add download logic
 - [ ] Add Spanish translation
