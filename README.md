@@ -6,6 +6,19 @@ The apps are displayed as a card and each app has 2 buttons, one to view the sou
 
 In each app a logo of the OS for which the app is available is shown.
 
+## Features
+
+### Technologies used
+
+- Astro
+- SolidJS for the user-interactable part (e.g. the download buttons of the apps)
+
+### Additional features
+
+- Backend created with Supabase
+- The translations are obtained dynamically from some API to translate texts (the original description is in English and is obtained from Supabase).
+- The download URL of the app desired by the user is obtained dynamically from GitHub thanks to the "octokit" library.
+
 ## Run Locally
 
 Clone the project
