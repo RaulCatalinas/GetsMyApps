@@ -2,7 +2,7 @@
 import { supabaseClient } from "@/config/supabase"
 
 // Types
-import type { App, AppWithLogo } from "@/types/supabase"
+import type { App, AppWithLogo } from "@/types/app"
 
 // Services
 import { getLogo } from "./get-logo"
@@ -18,7 +18,8 @@ export async function getApps(): Promise<void | AppWithLogo[]> {
 
 	return await Promise.all(
 		data.map(async app => {
-			const { name, description, githubRepoName, alternativeText, os } = app
+			const { name, description, githubRepoName, alternativeText, osArray } =
+				app
 
 			const logoURL = await getLogo(name)
 
@@ -28,7 +29,7 @@ export async function getApps(): Promise<void | AppWithLogo[]> {
 				githubRepoName,
 				logoURL,
 				alternativeText,
-				os
+				osArray
 			}
 		})
 	)
