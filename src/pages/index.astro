@@ -29,7 +29,9 @@ try {
 	<main class="flex items-center justify-center">
 		{
 			!Array.isArray(apps) || anErrorHasOccurred ? (
-				<h1 class="text-white">No apps available</h1>
+				<h1 class="text-white text-center text-pretty">
+					No apps available at the moment, please try again later.
+				</h1>
 			) : (
 				<RenderApps apps={apps} />
 			)
