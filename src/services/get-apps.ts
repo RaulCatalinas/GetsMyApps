@@ -18,7 +18,7 @@ export async function getApps(): Promise<void | AppWithLogo[]> {
 
 	return await Promise.all(
 		data.map(async app => {
-			const { name, description, githubRepoName, alternativeText } = app
+			const { name, description, githubRepoName, alternativeText, os } = app
 
 			const logoURL = await getLogo(name)
 
@@ -27,7 +27,8 @@ export async function getApps(): Promise<void | AppWithLogo[]> {
 				description,
 				githubRepoName,
 				logoURL,
-				alternativeText
+				alternativeText,
+				os
 			}
 		})
 	)

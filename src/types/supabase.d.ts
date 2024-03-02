@@ -17,6 +17,7 @@ export type Database = {
 					githubRepoName: string
 					id: string
 					name: string
+					os: string
 				}
 				Insert: {
 					alternativeText: string
@@ -25,6 +26,7 @@ export type Database = {
 					githubRepoName: string
 					id?: string
 					name: string
+					os: string
 				}
 				Update: {
 					alternativeText?: string
@@ -33,6 +35,7 @@ export type Database = {
 					githubRepoName?: string
 					id?: string
 					name?: string
+					os?: string
 				}
 				Relationships: []
 			}
@@ -134,7 +137,7 @@ export type Enums<
 
 export type App = Pick<
 	Database["public"]["Tables"]["Apps"]["Row"],
-	"name" | "description" | "alternativeText" | "githubRepoName"
+	"name" | "description" | "alternativeText" | "githubRepoName" | "os"
 >
 
 export type AppWithLogo = App & { logoURL: string }

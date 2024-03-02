@@ -12,28 +12,40 @@ interface Props {
 const { apps } = Astro.props;
 ---
 
-<div
-  class="grid grid-cols-2 max-sm:grid-cols-1 gap-4 mt-4 place-content-center"
->
+<div class="grid grid-cols-2 max-sm:grid-cols-1 mt-4 gap-4 place-items-center">
   {
     apps.map((app) => {
-      const { name, description, logoURL, alternativeText, githubRepoName } =
-        app;
+      const {
+        name,
+        description,
+        logoURL,
+        alternativeText,
+        githubRepoName,
+        os,
+      } = app;
+
+      const osArray = os.split("\n");
 
       return (
         <article class="bg-white rounded-lg shadow-md mt-4 p-4 w-max">
           <h1 class="text-xl font-semibold text-center text-balance">{name}</h1>
-          <p class="text-gray-700 text-center text-pretty">{description}</p>
+          <p class="text-center text-pretty">{description}</p>
+          <p class="text-center text-pretty mb-2">Available for:</p>
+          <div class="flex items-center justify-center gap-2">
+            {osArray.map((os) => (
+              <span class="inline-flex gap-2 rounded-full p-2 text-base font-medium bg-gray-200 text-gray-800 text-pretty">
+                {os}
+              </span>
+            ))}
+          </div>
           <img
             src={logoURL}
             alt={alternativeText}
-            class="mx-auto mt-3 flex items-center justify-center"
+            class="mx-auto m-3 flex items-center justify-center"
             width="125"
             height="125"
           />
-          <div class="flex items-center justify-center mt-4">
-            <DownloadButton githubRepoName={githubRepoName} client:load />
-          </div>
+          <DownloadButton githubRepoName={githubRepoName} client:load />
         </article>
       );
     })
