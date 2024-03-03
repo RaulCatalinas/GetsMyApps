@@ -11,7 +11,8 @@ export default defineConfig({
 	adapter: vercel({
 		webAnalytics: {
 			enabled: true
-		}
+		},
+		imageService: false
 	}),
 	i18n: {
 		defaultLocale: "en",
