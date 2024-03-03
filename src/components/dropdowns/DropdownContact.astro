@@ -1,0 +1,20 @@
+---
+// Components
+import Option from "./Option.astro";
+
+// Layouts
+import DropdownLayout from "@/layouts/DropdownLayout.astro";
+---
+
+<DropdownLayout id="contact-method" labelText="Contact Method">
+  <Option value="facebook" text="Facebook" />
+  <Option value="instagram" text="Instagram" />
+  <Option value="twitter" text="Twitter" />
+  <Option value="github" text="GitHub" />
+</DropdownLayout>
+
+<script>
+  import { contactController } from "@/controllers/contact";
+
+  contactController();
+</script>
