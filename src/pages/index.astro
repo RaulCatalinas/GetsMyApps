@@ -1,6 +1,6 @@
 ---
 // Components
-import RenderApps from "@/components/renders/RenderApps.astro";
+import RenderApps from "@/components/renders/RenderApps";
 import Layout from "@/layouts/Layout.astro";
 
 // Services
@@ -33,7 +33,7 @@ try {
 					No apps available at the moment, please try again later.
 				</h1>
 			) : (
-				<RenderApps apps={apps} />
+				<RenderApps apps={apps} client:load />
 			)
 		}
 	</main>
