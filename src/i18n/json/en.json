@@ -1,0 +1,18 @@
+{
+	"renderApps": {
+		"error": "No apps were found matching your search query",
+		"available": "Available for"
+	},
+	"dropdowns": {
+		"language": {
+			"Spanish": "Spanish",
+			"English": "English"
+		}
+	},
+	"labels": {
+		"dropdowns": {
+			"contact": "Contact Method",
+			"language": "Select language"
+		}
+	}
+}

@@ -18,23 +18,23 @@ let apps: AppWithLogo[] | void = [];
 let anErrorHasOccurred: boolean = false;
 
 try {
-	apps = await getApps();
+  apps = await getApps();
 } catch (error) {
-	console.error(error);
-	anErrorHasOccurred = true;
+  console.error(error);
+  anErrorHasOccurred = true;
 }
 ---
 
 <Layout title="GetsMyApps">
-	<main class="flex items-center justify-center">
-		{
-			!Array.isArray(apps) || anErrorHasOccurred ? (
-				<h1 class="text-white text-center text-pretty text-4xl font-sans m-4 shadow-md">
-					No apps available at the moment, please try again later.
-				</h1>
-			) : (
-				<RenderApps apps={apps} i18nURL={Astro.url} client:load />
-			)
-		}
-	</main>
+  <main class="flex items-center justify-center">
+    {
+      !Array.isArray(apps) || anErrorHasOccurred ? (
+        <h1 class="text-white text-center text-pretty text-4xl font-sans m-4 shadow-md">
+          No hay aplicaciones disponibles en este momento, inténtelo más tarde.
+        </h1>
+      ) : (
+        <RenderApps apps={apps} i18nURL={Astro.url} client:load />
+      )
+    }
+  </main>
 </Layout>

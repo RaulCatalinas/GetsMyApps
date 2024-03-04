@@ -11,12 +11,20 @@ import SearchForm from "../forms/SearchForm"
 // Hooks
 import { useSearch } from "@/hooks/useSearch"
 
+// i18n
+import { getJson, getLangFromUrl } from "@/i18n/utils"
+
 interface Props {
 	apps: AppWithLogo[]
+	i18nURL: URL
 }
 
-export default function RenderApps({ apps }: Props) {
+export default function RenderApps({ apps, i18nURL }: Props) {
 	const { getFilteredApps, handleChange } = useSearch(apps)
+
+	const lang = getLangFromUrl(i18nURL)
+
+	const { renderApps } = getJson(lang)
 
 	return (
 		<div class="flex flex-col items-center justify-center">
@@ -24,7 +32,7 @@ export default function RenderApps({ apps }: Props) {
 
 			{getFilteredApps().length === 0 && (
 				<h1 class="text-white text-center text-pretty text-4xl font-sans m-4 shadow-md">
-					No apps were found matching your search query
+					{renderApps.error}
 				</h1>
 			)}
 
@@ -33,12 +41,14 @@ export default function RenderApps({ apps }: Props) {
 					getFilteredApps().map(app => {
 						const {
 							name,
-							description,
+							descriptions,
 							logoURL,
 							alternativeText,
 							githubRepoName,
 							osArray
 						} = app
+
+						const description = descriptions[lang]
 
 						return (
 							<article class="bg-white rounded-lg shadow-md mt-4 p-4 w-max">
@@ -46,7 +56,9 @@ export default function RenderApps({ apps }: Props) {
 									{name}
 								</h1>
 								<p class="text-center text-pretty">{description}</p>
-								<p class="text-center text-pretty mb-2">Available for:</p>
+								<p class="text-center text-pretty mb-2">
+									{renderApps.available}:
+								</p>
 								<div
 									class={`
                     grid grid-cols-${osArray.length === 1 ? 1 : 3}
