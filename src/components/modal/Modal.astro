@@ -1,0 +1,46 @@
+---
+// types
+import type { Language } from "@/types/language";
+
+// i18n
+import { getJson } from "@/i18n/utils";
+
+// Components
+import ModalButton from "../buttons/ModalButton";
+
+interface Props {
+  language: Language;
+}
+
+const { language } = Astro.props;
+
+const { modal } = getJson(language);
+---
+
+<dialog data-language={language} id="modal">
+  <div class="max-w-md p-4 rounded-md bg-white shadow-md">
+    <h3 class="text-black text-lg text-center text-pretty font-semibold">
+      {modal.text}
+    </h3>
+    <div class="flex flex-col items-center justify-center mt-4 gap-3">
+      <ModalButton
+        type="affirmative"
+        id="yes-btn"
+        language={language}
+        client:idle
+      />
+      <ModalButton
+        type="negative"
+        id="no-btn"
+        language={language}
+        client:idle
+      />
+    </div>
+  </div>
+</dialog>
+
+<script>
+  const modal = document.getElementById("modal") as HTMLDialogElement;
+
+  modal.showModal();
+</script>

@@ -14,5 +14,9 @@
 			"contact": "Contact Method",
 			"language": "Select language"
 		}
+	},
+	"modal": {
+		"text": "There's an English version available, do you wanna go to the English version?",
+		"yes": "Yes"
 	}
 }

@@ -14,5 +14,9 @@
 			"contact": "Método de contacto",
 			"language": "Seleccionar idioma"
 		}
+	},
+	"modal": {
+		"text": "Hay una versión en español disponible, ¿Quieres ir a la versión en español?",
+		"yes": "Si"
 	}
 }

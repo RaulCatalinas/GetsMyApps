@@ -1,5 +1,6 @@
 ---
 // Components
+import Modal from "@/components/modal/Modal.astro";
 import RenderApps from "@/components/renders/RenderApps";
 import Layout from "@/layouts/Layout.astro";
 
@@ -23,10 +24,19 @@ try {
 	console.error(error);
 	anErrorHasOccurred = true;
 }
+
+const isBrowserInSpnish = Astro.preferredLocale?.indexOf("es") !== -1;
 ---
 
 <Layout title="GetsMyApps">
 	<main class="flex items-center justify-center">
+		{
+			isBrowserInSpnish && (
+				<div id="dialog-container">
+					<Modal language="es" />
+				</div>
+			)
+		}
 		{
 			!Array.isArray(apps) || anErrorHasOccurred ? (
 				<h1 class="text-white text-center text-pretty text-4xl font-sans m-4 shadow-md">
