@@ -22,13 +22,13 @@ export default function RenderApps({ apps }: Props) {
 		<div class="flex flex-col items-center justify-center">
 			<SearchForm handleChange={handleChange} />
 
-			<div class="grid grid-cols-2 max-sm:grid-cols-1 mt-4 gap-4 place-items-center">
-				{getFilteredApps().length === 0 && (
-					<h1 class="text-white text-center text-pretty text-4xl font-sans my-4 mx-4 shadow-md">
-						No apps were found matching your search query
-					</h1>
-				)}
+			{getFilteredApps().length === 0 && (
+				<h1 class="text-white text-center text-pretty text-4xl font-sans m-4 shadow-md">
+					No apps were found matching your search query
+				</h1>
+			)}
 
+			<div class="grid grid-cols-2 max-sm:grid-cols-1 mt-4 gap-4 place-items-center">
 				{getFilteredApps().length > 0 &&
 					getFilteredApps().map(app => {
 						const {
