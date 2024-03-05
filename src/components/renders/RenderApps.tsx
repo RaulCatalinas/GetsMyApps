@@ -77,7 +77,6 @@ export default function RenderApps({ apps, i18nURL }: Props) {
 									class="mx-auto m-3 flex items-center justify-center"
 									width="125"
 									height="125"
-									loading="lazy"
 								/>
 								<DownloadButton githubRepoName={githubRepoName} />
 							</article>
