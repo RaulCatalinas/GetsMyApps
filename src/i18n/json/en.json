@@ -27,5 +27,9 @@
 	"search": {
 		"label": "App name or operating system",
 		"placeholder": "App name or operating system"
+	},
+	"share": {
+		"success": "URL copied to clipboard",
+		"error": "Oops! A problem occurred while trying to copy the URL to the clipboard. Please try again later."
 	}
 }

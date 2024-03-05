@@ -19,6 +19,7 @@
 		"@supabase/supabase-js": "2.39.7",
 		"@vercel/speed-insights": "1.0.10",
 		"astro": "4.4.10",
+		"astro-seo": "0.8.3",
 		"cloudinary": "2.0.2",
 		"octokit": "3.1.2",
 		"solid-js": "1.8.15",

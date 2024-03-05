@@ -27,5 +27,9 @@
 	"search": {
 		"label": "Nombre de la app o sistema operativo",
 		"placeholder": "Nombre de la app o sistema operativo"
+	},
+	"share": {
+		"success": "URL copiada en el portapapeles",
+		"error": "¡Oops! Se ha producido un problema al intentar copiar la URL en el portapapeles. Vuelva a intentarlo más tarde."
 	}
 }
