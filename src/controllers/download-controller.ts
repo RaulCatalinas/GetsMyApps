@@ -4,14 +4,21 @@ import { notify } from "@/notifications/notify"
 // Utils
 import { getDownloadUrl } from "@/utils/get-download-url"
 
+// i18n
+import { getJson, getLangFromUrl } from "@/i18n/utils"
+
 export async function downloadController(githubRepoName: string) {
+	const url = new URL(location.href)
+	const lang = getLangFromUrl(url)
+	const { controllers } = getJson(lang)
+
 	let downloadUrl: string
 
 	try {
 		downloadUrl = await getDownloadUrl(githubRepoName)
 	} catch (error) {
 		return notify({
-			text: "Sorry, the file you wish to download isn't available for your OS.",
+			text: controllers.download.error,
 			type: "error"
 		})
 	}

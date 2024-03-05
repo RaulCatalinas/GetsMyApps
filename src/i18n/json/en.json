@@ -18,5 +18,10 @@
 	"modal": {
 		"text": "There's an English version available, do you wanna go to the English version?",
 		"yes": "Yes"
+	},
+	"controllers": {
+		"download": {
+			"error": "Sorry, the file you are trying to download isn't available for your operating system."
+		}
 	}
 }

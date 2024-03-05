@@ -18,5 +18,10 @@
 	"modal": {
 		"text": "Hay una versión en español disponible, ¿Quieres ir a la versión en español?",
 		"yes": "Si"
+	},
+	"controllers": {
+		"download": {
+			"error": "Lo sentimos, el archivo que intenta descargar no está disponible para su sistema operativo."
+		}
 	}
 }
