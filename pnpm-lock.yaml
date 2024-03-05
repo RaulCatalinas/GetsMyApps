@@ -32,9 +32,6 @@ dependencies:
   octokit:
     specifier: 3.1.2
     version: 3.1.2
-  platform:
-    specifier: 1.3.6
-    version: 1.3.6
   solid-js:
     specifier: 1.8.15
     version: 1.8.15
@@ -55,9 +52,6 @@ devDependencies:
   '@s-ui/mono':
     specifier: 2.45.0
     version: 2.45.0
-  '@types/platform':
-    specifier: 1.3.6
-    version: 1.3.6
   '@types/toastify-js':
     specifier: 1.12.3
     version: 1.12.3
@@ -1404,10 +1398,6 @@ packages:
   /@types/phoenix@1.6.4:
     resolution: {integrity: sha512-B34A7uot1Cv0XtaHRYDATltAdKx0BvVKNgYNqE4WjtPUa4VQJM7kxeXcVKaH+KS+kCmZ+6w+QaUdcljiheiBJA==}
     dev: false
-
-  /@types/platform@1.3.6:
-    resolution: {integrity: sha512-ZmSaqHuvzv+jC232cFoz2QqPUkaj6EvMmCrWcx3WRr7xTPVFCMUOTcOq8m2d+Zw1iKRc1kDiaA+jtNrV0hkVew==}
-    dev: true
 
   /@types/toastify-js@1.12.3:
     resolution: {integrity: sha512-9RjLlbAHMSaae/KZNHGv19VG4gcLIm3YjvacCXBtfMfYn26h76YP5oxXI8k26q4iKXCB9LNfv18lsoS0JnFPTg==}
@@ -4520,10 +4510,6 @@ packages:
     engines: {node: '>=8'}
     dependencies:
       find-up: 4.1.0
-    dev: false
-
-  /platform@1.3.6:
-    resolution: {integrity: sha512-fnWVljUchTro6RiCFvCXBbNhJc2NijN7oIQxbwsyL0buWJPG85v81ehlHI9fXrJsMNgTofEoWIQeClKpgxFLrg==}
     dev: false
 
   /postcss-import@15.1.0(postcss@8.4.35):
