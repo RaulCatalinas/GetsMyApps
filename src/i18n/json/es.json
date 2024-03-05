@@ -23,5 +23,9 @@
 		"download": {
 			"error": "Lo sentimos, el archivo que intenta descargar no está disponible para su sistema operativo."
 		}
+	},
+	"search": {
+		"label": "Nombre de la app o sistema operativo",
+		"placeholder": "Nombre de la app o sistema operativo"
 	}
 }

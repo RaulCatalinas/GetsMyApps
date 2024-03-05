@@ -28,7 +28,7 @@ export default function RenderApps({ apps, i18nURL }: Props) {
 
 	return (
 		<div class="flex flex-col items-center justify-center">
-			<SearchForm handleChange={handleChange} />
+			<SearchForm handleChange={handleChange} i18nURL={i18nURL} />
 
 			{getFilteredApps().length === 0 && (
 				<h1 class="text-white text-center text-pretty text-4xl font-sans m-4 shadow-md">

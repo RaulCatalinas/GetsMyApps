@@ -23,5 +23,9 @@
 		"download": {
 			"error": "Sorry, the file you are trying to download isn't available for your operating system."
 		}
+	},
+	"search": {
+		"label": "App name or operating system",
+		"placeholder": "App name or operating system"
 	}
 }
