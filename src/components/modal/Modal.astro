@@ -40,7 +40,9 @@ const { modal } = getJson(language);
 </dialog>
 
 <script>
-  const modal = document.getElementById("modal") as HTMLDialogElement;
+  const modal = document.getElementById("modal");
 
-  modal.showModal();
+  if (modal instanceof HTMLDialogElement) {
+    modal.showModal();
+  }
 </script>

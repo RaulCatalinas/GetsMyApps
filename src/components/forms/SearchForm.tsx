@@ -9,11 +9,13 @@ export default function SearchForm({ handleChange, i18nURL }: Props) {
 	const lang = getLangFromUrl(i18nURL)
 	const { search } = getJson(lang)
 
+	const divWidth = lang === "es" ? 330 : 280
+
 	return (
 		<div
 			class={`
 				flex flex-col items-center justify-center 
-				w-[${lang === "es" ? 330 : 280}px] h-max rounded-3xl 
+				w-[${divWidth}px] h-max rounded-3xl 
 			bg-gray-900 shadow-md border border-gray-700
 			`}
 			id="search"

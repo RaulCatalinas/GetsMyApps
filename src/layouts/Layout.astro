@@ -64,24 +64,24 @@ const lang = getLangFromUrl(Astro.url);
 			openGraph={{
 				basic: {
 					title:
-						"EasyViewer, la mejor web para descargar vídeos/audios de YouTube",
+						"GetsMyApp, easily download the apps of Raul Catalinas Esteban",
 					url: Astro.url.href,
 					type: "website",
 					image: `${Astro.url.href}seo-image.png`,
 				},
 				image: {
 					secureUrl: `${Astro.url.href}seo-image.png`,
-					alt: "EasyViewer logo",
+					alt: "GetsMyApps logo",
 					type: "image/png",
-					width: 630,
-					height: 630,
+					width: 500,
+					height: 500,
 				},
 				optional: {
 					description:
-						"Descarga gratis videos y audios de YouTube sin marca de agua y en alta calidad. EasyViewer, la mejor herramienta para descargar videos de YouTube. ¡Visita nuestra web ahora!",
+						"GetsMyApp, easily download the apps of Raul Catalinas Esteban",
 					localeAlternate: ["en", "es"],
 					locale: "es_ES",
-					siteName: "EasyViewer",
+					siteName: "GetsMyApps",
 				},
 			}}
 		/>
@@ -90,41 +90,42 @@ const lang = getLangFromUrl(Astro.url);
 		<Header />
 		<slot />
 		<SpeedInsights />
-	</body><style is:global>
-		:root {
-			min-height: 100%;
-		}
+		<style is:global>
+			:root {
+				min-height: 100%;
+			}
 
-		html {
-			box-sizing: border-box;
-			background: rgb(2 0 36);
-			background: linear-gradient(
-				180deg,
-				rgb(2 0 36 / 100%) 0%,
-				rgb(9 9 121 / 100%) 35%,
-				rgb(0 212 255 / 100%) 100%
-			);
-		}
+			html {
+				box-sizing: border-box;
+				background: rgb(2 0 36);
+				background: linear-gradient(
+					180deg,
+					rgb(2 0 36 / 100%) 0%,
+					rgb(9 9 121 / 100%) 35%,
+					rgb(0 212 255 / 100%) 100%
+				);
+			}
 
-		*,
-		*::before,
-		*::after {
-			box-sizing: inherit;
-		}
+			*,
+			*::before,
+			*::after {
+				box-sizing: inherit;
+			}
 
-		html,
-		body {
-			max-width: 100vw;
-			overflow-x: hidden;
-		}
+			html,
+			body {
+				max-width: 100vw;
+				overflow-x: hidden;
+			}
 
-		/* Fonts */
-		@font-face {
-			font-family: "Inter";
-			src: url("/fonts/inter-latin-400-normal.woff2") format("woff2");
-			font-weight: 400;
-			font-style: normal;
-			font-display: fallback;
-		}
-	</style>
+			/* Fonts */
+			@font-face {
+				font-family: "Inter";
+				src: url("/fonts/inter-latin-400-normal.woff2") format("woff2");
+				font-weight: 400;
+				font-style: normal;
+				font-display: fallback;
+			}
+		</style>
+	</body>
 </html>
