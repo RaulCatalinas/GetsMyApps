@@ -31,5 +31,8 @@
 	"share": {
 		"success": "URL copiada en el portapapeles",
 		"error": "¡Oops! Se ha producido un problema al intentar copiar la URL en el portapapeles. Vuelva a intentarlo más tarde."
+	},
+	"shareAPI": {
+		"text": "Descarga gratis las apps de Raul Catalinas Esteban"
 	}
 }

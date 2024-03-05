@@ -31,5 +31,8 @@
 	"share": {
 		"success": "URL copied to clipboard",
 		"error": "Oops! A problem occurred while trying to copy the URL to the clipboard. Please try again later."
+	},
+	"shareAPI": {
+		"text": "Download free the apps of Raul Catalinas Esteban"
 	}
 }
