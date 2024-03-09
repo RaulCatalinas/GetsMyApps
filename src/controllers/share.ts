@@ -15,29 +15,29 @@ export async function shareController() {
 	const lang = getLangFromUrl(url)
 	const { share } = getJson(lang)
 
-	const canShare = navigator.canShare(SHARE_DATA)
-
-	if (canShare) {
+	if (navigator.share) {
 		try {
 			await navigator.share(SHARE_DATA)
 		} catch (error) {
 			console.error(error)
 		}
-	} else {
-		try {
-			await copyTextToClipboard(location.href)
 
-			notify({
-				text: share.success,
-				type: "success"
-			})
-		} catch (error) {
-			console.error(error)
+		return
+	}
 
-			notify({
-				text: share.error,
-				type: "error"
-			})
-		}
+	try {
+		await copyTextToClipboard(location.href)
+
+		notify({
+			text: share.success,
+			type: "success"
+		})
+	} catch (error) {
+		console.error(error)
+
+		notify({
+			text: share.error,
+			type: "error"
+		})
 	}
 }
