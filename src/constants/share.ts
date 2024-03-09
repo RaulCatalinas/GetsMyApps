@@ -5,7 +5,7 @@ const lang = getLangFromUrl(url)
 const { shareAPI } = getJson(lang)
 
 export const SHARE_DATA: ShareData = {
-	title: "EasyViewer",
+	title: "GetsMyApps",
 	url: location.href,
 	text: shareAPI.text
 }
