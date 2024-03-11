@@ -32,6 +32,6 @@
 		"@s-ui/mono": "2.45.0",
 		"@types/toastify-js": "1.12.3",
 		"markdownlint": "0.33.0",
-		"supabase": "1.145.4"
+		"supabase": "1.148.6"
 	}
 }
