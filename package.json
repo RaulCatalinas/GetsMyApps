@@ -28,7 +28,7 @@
 		"typescript": "5.3.3"
 	},
 	"devDependencies": {
-		"@biomejs/biome": "1.5.3",
+		"@biomejs/biome": "1.6.0",
 		"@s-ui/mono": "2.45.0",
 		"@types/toastify-js": "1.12.3",
 		"markdownlint": "0.33.0",
