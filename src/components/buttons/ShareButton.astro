@@ -1,5 +1,5 @@
 ---
-import ShareIcon from "@/icons/share/ShareIcon.astro";
+import ShareIcon from '@/icons/share/ShareIcon.astro'
 ---
 
 <button type="button" class="hover:scale-110 active:scale-90" id="btn-share">
@@ -7,9 +7,9 @@ import ShareIcon from "@/icons/share/ShareIcon.astro";
 </button>
 
 <script>
-  import { shareController } from "@/controllers/share";
+  import { shareController } from '@/controllers/share'
 
-  const btnShare = document.getElementById("btn-share");
+  const btnShare = document.getElementById('btn-share')
 
-  btnShare?.addEventListener("click", shareController);
+  btnShare?.addEventListener('click', shareController)
 </script>

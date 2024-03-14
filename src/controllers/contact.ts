@@ -1,16 +1,16 @@
-import { SOCIAL_NETWORKS } from "@/constants/social-networks"
+import { SOCIAL_NETWORKS } from '@/constants/social-networks'
 
 type SocialNetworkKey = keyof typeof SOCIAL_NETWORKS
 
 export function contactController() {
-	const contactMethod = document.getElementById("contact-method")
+  const contactMethod = document.getElementById('contact-method')
 
-	contactMethod?.addEventListener("change", event => {
-		const socialNetworkKey = (event.target as HTMLSelectElement)
-			.value as SocialNetworkKey
+  contactMethod?.addEventListener('change', event => {
+    const socialNetworkKey = (event.target as HTMLSelectElement)
+      .value as SocialNetworkKey
 
-		const socialNetwork = SOCIAL_NETWORKS[socialNetworkKey]
+    const socialNetwork = SOCIAL_NETWORKS[socialNetworkKey]
 
-		open(socialNetwork, "_blank")
-	})
+    open(socialNetwork, '_blank')
+  })
 }

@@ -1,31 +1,31 @@
 ---
 // Components
-import Modal from "@/components/modal/Modal.astro";
-import RenderApps from "@/components/renders/RenderApps";
-import Layout from "@/layouts/Layout.astro";
+import Modal from '@/components/modal/Modal.astro'
+import RenderApps from '@/components/renders/RenderApps'
+import Layout from '@/layouts/Layout.astro'
 
 // Services
-import { getApps } from "@/services/get-apps";
+import { getApps } from '@/services/get-apps'
 
 // Types
-import type { AppWithLogo } from "@/types/app";
+import type { AppWithLogo } from '@/types/app'
 
 // Config
-import { configureCloudinary } from "@/config/cloudinary";
+import { configureCloudinary } from '@/config/cloudinary'
 
-configureCloudinary();
+configureCloudinary()
 
-let apps: AppWithLogo[] | void = [];
-let anErrorHasOccurred: boolean = false;
+let apps: AppWithLogo[] | void = []
+let anErrorHasOccurred: boolean = false
 
 try {
-  apps = await getApps();
+  apps = await getApps()
 } catch (error) {
-  console.error(error);
-  anErrorHasOccurred = true;
+  console.error(error)
+  anErrorHasOccurred = true
 }
 
-const isBrowserInEnglish = Astro.preferredLocale?.indexOf("es") === -1;
+const isBrowserInEnglish = Astro.preferredLocale?.includes('en') ?? false
 ---
 
 <Layout title="GetsMyApps">

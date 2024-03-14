@@ -1,20 +1,20 @@
 ---
 // types
-import type { Language } from "@/types/language";
+import type { Language } from '@/types/language'
 
 // i18n
-import { getJson } from "@/i18n/utils";
+import { getJson } from '@/i18n/utils'
 
 // Components
-import ModalButton from "../buttons/ModalButton";
+import ModalButton from '../buttons/ModalButton'
 
 interface Props {
-  language: Language;
+  language: Language
 }
 
-const { language } = Astro.props;
+const { language } = Astro.props
 
-const { modal } = getJson(language);
+const { modal } = getJson(language)
 ---
 
 <dialog data-language={language} id="modal">
@@ -23,26 +23,16 @@ const { modal } = getJson(language);
       {modal.text}
     </h3>
     <div class="flex flex-col items-center justify-center mt-4 gap-3">
-      <ModalButton
-        type="affirmative"
-        id="yes-btn"
-        language={language}
-        client:idle
-      />
-      <ModalButton
-        type="negative"
-        id="no-btn"
-        language={language}
-        client:idle
-      />
+      <ModalButton type="affirmative" id="yes-btn" {language} client:idle />
+      <ModalButton type="negative" id="no-btn" {language} client:idle />
     </div>
   </div>
 </dialog>
 
 <script>
-  const modal = document.getElementById("modal");
+  const modal = document.getElementById('modal')
 
   if (modal instanceof HTMLDialogElement) {
-    modal.showModal();
+    modal.showModal()
   }
 </script>

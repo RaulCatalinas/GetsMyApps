@@ -1,131 +1,131 @@
 ---
 // Third-Party components
-import SpeedInsights from "@vercel/speed-insights/astro";
-import { SEO } from "astro-seo";
+import SpeedInsights from '@vercel/speed-insights/astro'
+import { SEO } from 'astro-seo'
 
 // Components
-import Header from "@/components/headers/Header.astro";
+import Header from '@/components/headers/Header.astro'
 
 // i18n
-import { getLangFromUrl } from "@/i18n/utils";
+import { getLangFromUrl } from '@/i18n/utils'
 
 interface Props {
-	title: string;
+  title: string
 }
 
-const { title } = Astro.props;
+const { title } = Astro.props
 
-const lang = getLangFromUrl(Astro.url);
+const lang = getLangFromUrl(Astro.url)
 ---
 
 <!doctype html>
-<html lang={lang}>
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<title>{title}</title>
-		<link
-			rel="preload"
-			href="/fonts/inter-latin-400-normal.woff2"
-			as="font"
-			crossorigin="anonymous"
-		/>
-		<link rel="icon" type="image/png" href="/favicon.png" />
+<html {lang}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>{title}</title>
+    <link
+      rel="preload"
+      href="/fonts/inter-latin-400-normal.woff2"
+      as="font"
+      crossorigin="anonymous"
+    />
+    <link rel="icon" type="image/png" href="/favicon.png" />
 
-		<SEO
-			description="Download free the apps of Raul Catalinas Esteban"
-			twitter={{
-				creator: "@CatalinasRaul",
-				site: "@CatalinasRaul",
-				card: "app",
-				image: `${Astro.url.href}seo-image.png`,
-				imageAlt: "GetsMyApps Logo",
-				description: "Download free the apps of Raul Catalinas Esteban",
-				title: "GetsMyApp, easily download the apps of Raul Catalinas Esteban",
-			}}
-			extend={{
-				meta: [
-					{
-						name: "description",
-						content: "Descarga gratis las apps de Raul Catalinas Esteban",
-					},
-				],
-			}}
-			languageAlternates={[
-				{
-					href: Astro.url.href,
-					hrefLang: "en",
-				},
-				{
-					href: `${Astro.url.href}es`,
-					hrefLang: "es",
-				},
-			]}
-			openGraph={{
-				basic: {
-					title:
-						"GetsMyApp, easily download the apps of Raul Catalinas Esteban",
-					url: Astro.url.href,
-					type: "website",
-					image: `${Astro.url.href}seo-image.png`,
-				},
-				image: {
-					secureUrl: `${Astro.url.href}seo-image.png`,
-					alt: "GetsMyApps logo",
-					type: "image/png",
-					width: 500,
-					height: 500,
-				},
-				optional: {
-					description:
-						"GetsMyApp, easily download the apps of Raul Catalinas Esteban",
-					localeAlternate: ["en", "es"],
-					locale: "es_ES",
-					siteName: "GetsMyApps",
-				},
-			}}
-		/>
-	</head>
-	<body>
-		<Header />
-		<slot />
-		<SpeedInsights />
-		<style is:global>
-			:root {
-				min-height: 100%;
-			}
+    <SEO
+      description="Download free the apps of Raul Catalinas Esteban"
+      twitter={{
+        creator: '@CatalinasRaul',
+        site: '@CatalinasRaul',
+        card: 'app',
+        image: `${Astro.url.href}seo-image.png`,
+        imageAlt: 'GetsMyApps Logo',
+        description: 'Download free the apps of Raul Catalinas Esteban',
+        title: 'GetsMyApp, easily download the apps of Raul Catalinas Esteban'
+      }}
+      extend={{
+        meta: [
+          {
+            name: 'description',
+            content: 'Descarga gratis las apps de Raul Catalinas Esteban'
+          }
+        ]
+      }}
+      languageAlternates={[
+        {
+          href: Astro.url.href,
+          hrefLang: 'en'
+        },
+        {
+          href: `${Astro.url.href}es`,
+          hrefLang: 'es'
+        }
+      ]}
+      openGraph={{
+        basic: {
+          title:
+            'GetsMyApp, easily download the apps of Raul Catalinas Esteban',
+          url: Astro.url.href,
+          type: 'website',
+          image: `${Astro.url.href}seo-image.png`
+        },
+        image: {
+          secureUrl: `${Astro.url.href}seo-image.png`,
+          alt: 'GetsMyApps logo',
+          type: 'image/png',
+          width: 500,
+          height: 500
+        },
+        optional: {
+          description:
+            'GetsMyApp, easily download the apps of Raul Catalinas Esteban',
+          localeAlternate: ['en', 'es'],
+          locale: 'es_ES',
+          siteName: 'GetsMyApps'
+        }
+      }}
+    />
+  </head>
+  <body>
+    <Header />
+    <slot />
+    <SpeedInsights />
+    <style is:global>
+      :root {
+        min-height: 100%;
+      }
 
-			html {
-				box-sizing: border-box;
-				background: rgb(2 0 36);
-				background: linear-gradient(
-					180deg,
-					rgb(2 0 36 / 100%) 0%,
-					rgb(9 9 121 / 100%) 35%,
-					rgb(0 212 255 / 100%) 100%
-				);
-			}
+      html {
+        box-sizing: border-box;
+        background: rgb(2 0 36);
+        background: linear-gradient(
+          180deg,
+          rgb(2 0 36 / 100%) 0%,
+          rgb(9 9 121 / 100%) 35%,
+          rgb(0 212 255 / 100%) 100%
+        );
+      }
 
-			*,
-			*::before,
-			*::after {
-				box-sizing: inherit;
-			}
+      *,
+      *::before,
+      *::after {
+        box-sizing: inherit;
+      }
 
-			html,
-			body {
-				max-width: 100vw;
-				overflow-x: hidden;
-			}
+      html,
+      body {
+        max-width: 100vw;
+        overflow-x: hidden;
+      }
 
-			/* Fonts */
-			@font-face {
-				font-family: "Inter";
-				src: url("/fonts/inter-latin-400-normal.woff2") format("woff2");
-				font-weight: 400;
-				font-style: normal;
-				font-display: fallback;
-			}
-		</style>
-	</body>
+      /* Fonts */
+      @font-face {
+        font-family: 'Inter';
+        src: url('/fonts/inter-latin-400-normal.woff2') format('woff2');
+        font-weight: 400;
+        font-style: normal;
+        font-display: fallback;
+      }
+    </style>
+  </body>
 </html>

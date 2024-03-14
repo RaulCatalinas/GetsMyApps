@@ -1,1 +1,1 @@
-export const SUPABASE_PROJECT_URL = "https://limgmjdaljhludpriewz.supabase.co"
+export const SUPABASE_PROJECT_URL = 'https://limgmjdaljhludpriewz.supabase.co'

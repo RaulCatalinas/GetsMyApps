@@ -1,11 +1,11 @@
-import { OS } from "@/types/os.d"
+import { OS } from '@/types/os.d'
 
 export function getUserOS(): OS {
-	if (navigator.userAgent.indexOf("Win") !== -1) return OS.Windows
-	if (navigator.userAgent.indexOf("iPhone OS") !== -1) return OS.iOS
-	if (navigator.userAgent.indexOf("X11") !== -1) return OS.Unix
-	if (navigator.userAgent.indexOf("Android") !== -1) return OS.Android
-	if (navigator.userAgent.indexOf("Linux") !== -1) return OS.Linux
+  if (navigator.userAgent.includes('Win')) return OS.Windows
+  if (navigator.userAgent.includes('iPhone OS')) return OS.iOS
+  if (navigator.userAgent.includes('X11')) return OS.Unix
+  if (navigator.userAgent.includes('Android')) return OS.Android
+  if (navigator.userAgent.includes('Linux')) return OS.Linux
 
-	return OS.Mac
+  return OS.Mac
 }

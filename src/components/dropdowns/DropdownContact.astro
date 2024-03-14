@@ -1,15 +1,15 @@
 ---
 // Components
-import Option from "./Option.astro";
+import Option from './Option.astro'
 
 // Layouts
-import DropdownLayout from "@/layouts/DropdownLayout.astro";
+import DropdownLayout from '@/layouts/DropdownLayout.astro'
 
 // i18n
-import { getJson, getLangFromUrl } from "@/i18n/utils";
+import { getJson, getLangFromUrl } from '@/i18n/utils'
 
-const lang = getLangFromUrl(Astro.url);
-const { labels } = getJson(lang);
+const lang = getLangFromUrl(Astro.url)
+const { labels } = getJson(lang)
 ---
 
 <DropdownLayout id="contact-method" labelText={labels.dropdowns.contact}>
@@ -20,7 +20,7 @@ const { labels } = getJson(lang);
 </DropdownLayout>
 
 <script>
-  import { contactController } from "@/controllers/contact";
+  import { contactController } from '@/controllers/contact'
 
-  contactController();
+  contactController()
 </script>

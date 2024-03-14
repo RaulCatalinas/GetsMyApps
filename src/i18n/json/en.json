@@ -1,38 +1,38 @@
 {
-	"renderApps": {
-		"error": "No apps were found matching your search query",
-		"available": "Available for"
-	},
-	"dropdowns": {
-		"language": {
-			"Spanish": "Spanish",
-			"English": "English"
-		}
-	},
-	"labels": {
-		"dropdowns": {
-			"contact": "Contact Method",
-			"language": "Select language"
-		}
-	},
-	"modal": {
-		"text": "There's an English version available, do you wanna go to the English version?",
-		"yes": "Yes"
-	},
-	"controllers": {
-		"download": {
-			"error": "Sorry, the file you are trying to download isn't available for your operating system."
-		}
-	},
-	"search": {
-		"label": "App name or operating system",
-		"placeholder": "App name or operating system"
-	},
-	"share": {
-		"success": "URL copied to clipboard",
-		"error": "Oops! A problem occurred while trying to copy the URL to the clipboard. Please try again later."
-	},
-	"shareAPI": {
-		"text": "Download free the apps of Raul Catalinas Esteban"
-	}
+  "renderApps": {
+    "error": "No apps were found matching your search query",
+    "available": "Available for"
+  },
+  "dropdowns": {
+    "language": {
+      "Spanish": "Spanish",
+      "English": "English"
+    }
+  },
+  "labels": {
+    "dropdowns": {
+      "contact": "Contact Method",
+      "language": "Select language"
+    }
+  },
+  "modal": {
+    "text": "There's an English version available, do you wanna go to the English version?",
+    "yes": "Yes"
+  },
+  "controllers": {
+    "download": {
+      "error": "Sorry, the file you are trying to download isn't available for your operating system."
+    }
+  },
+  "search": {
+    "label": "App name or operating system",
+    "placeholder": "App name or operating system"
+  },
+  "share": {
+    "success": "URL copied to clipboard",
+    "error": "Oops! A problem occurred while trying to copy the URL to the clipboard. Please try again later."
+  },
+  "shareAPI": {
+    "text": "Download free the apps of Raul Catalinas Esteban"
+  }
 }

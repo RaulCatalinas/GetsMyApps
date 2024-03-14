@@ -1,32 +1,32 @@
 ---
 // Components
-import Option from "./Option.astro";
+import Option from './Option.astro'
 
 // Layouts
-import DropdownLayout from "@/layouts/DropdownLayout.astro";
+import DropdownLayout from '@/layouts/DropdownLayout.astro'
 
 // i18n
-import { getJson, getLangFromUrl } from "@/i18n/utils";
+import { getJson, getLangFromUrl } from '@/i18n/utils'
 
-const lang = getLangFromUrl(Astro.url);
-const { labels, dropdowns } = getJson(lang);
+const lang = getLangFromUrl(Astro.url)
+const { labels, dropdowns } = getJson(lang)
 ---
 
 <DropdownLayout id="select-language" labelText={labels.dropdowns.language}>
   <Option
     value="en"
     text={dropdowns.language.English}
-    selected={lang === "en"}
+    selected={lang === 'en'}
   />
   <Option
     value="es"
     text={dropdowns.language.Spanish}
-    selected={lang === "es"}
+    selected={lang === 'es'}
   />
 </DropdownLayout>
 
 <script>
-  import { changeLanguageController } from "@/controllers/change-language";
+  import { changeLanguageController } from '@/controllers/change-language'
 
-  changeLanguageController();
+  changeLanguageController()
 </script>

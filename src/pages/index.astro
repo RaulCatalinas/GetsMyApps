@@ -1,50 +1,50 @@
 ---
 // Components
-import Modal from "@/components/modal/Modal.astro";
-import RenderApps from "@/components/renders/RenderApps";
-import Layout from "@/layouts/Layout.astro";
+import Modal from '@/components/modal/Modal.astro'
+import RenderApps from '@/components/renders/RenderApps'
+import Layout from '@/layouts/Layout.astro'
 
 // Services
-import { getApps } from "@/services/get-apps";
+import { getApps } from '@/services/get-apps'
 
 // Types
-import type { AppWithLogo } from "@/types/app";
+import type { AppWithLogo } from '@/types/app'
 
 // Config
-import { configureCloudinary } from "@/config/cloudinary";
+import { configureCloudinary } from '@/config/cloudinary'
 
-configureCloudinary();
+configureCloudinary()
 
-let apps: AppWithLogo[] | void = [];
-let anErrorHasOccurred: boolean = false;
+let apps: AppWithLogo[] | void = []
+let anErrorHasOccurred: boolean = false
 
 try {
-	apps = await getApps();
+  apps = await getApps()
 } catch (error) {
-	console.error(error);
-	anErrorHasOccurred = true;
+  console.error(error)
+  anErrorHasOccurred = true
 }
 
-const isBrowserInSpnish = Astro.preferredLocale?.indexOf("es") !== -1;
+const isBrowserInSpnish = Astro.preferredLocale?.includes('es') ?? false
 ---
 
 <Layout title="GetsMyApps">
-	<main class="flex items-center justify-center">
-		{
-			isBrowserInSpnish && (
-				<div id="dialog-container">
-					<Modal language="es" />
-				</div>
-			)
-		}
-		{
-			!Array.isArray(apps) || anErrorHasOccurred ? (
-				<h1 class="text-white text-center text-pretty text-4xl font-sans m-4 shadow-md">
-					No apps available at the moment, please try again later.
-				</h1>
-			) : (
-				<RenderApps apps={apps} i18nURL={Astro.url} client:load />
-			)
-		}
-	</main>
+  <main class="flex items-center justify-center">
+    {
+      isBrowserInSpnish && (
+        <div id="dialog-container">
+          <Modal language="es" />
+        </div>
+      )
+    }
+    {
+      !Array.isArray(apps) || anErrorHasOccurred ? (
+        <h1 class="text-white text-center text-pretty text-4xl font-sans m-4 shadow-md">
+          No apps available at the moment, please try again later.
+        </h1>
+      ) : (
+        <RenderApps apps={apps} i18nURL={Astro.url} client:load />
+      )
+    }
+  </main>
 </Layout>

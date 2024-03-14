@@ -1,21 +1,21 @@
 // Services
-import { getAssets } from "@/services/get-assets"
+import { getAssets } from '@/services/get-assets'
 
 // Utils
-import { getUserOS } from "./get-user-os"
+import { getUserOS } from './get-user-os'
 
 export async function getDownloadUrl(githubRepoName: string) {
-	const assets = await getAssets(githubRepoName)
+  const assets = await getAssets(githubRepoName)
 
-	const userOS = getUserOS()
+  const userOS = getUserOS()
 
-	const assetToDownload = assets.find(
-		asset => asset.name.toLowerCase().indexOf(userOS) !== -1
-	)
+  const assetToDownload = assets.find(asset =>
+    asset.name.toLowerCase().includes(userOS)
+  )
 
-	if (!assetToDownload) throw new Error("Asset not found")
+  if (assetToDownload == null) throw new Error('Asset not found')
 
-	const { browser_download_url } = assetToDownload
+  const { browser_download_url: browserDownloadUrl } = assetToDownload
 
-	return browser_download_url
+  return browserDownloadUrl
 }

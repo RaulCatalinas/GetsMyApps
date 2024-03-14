@@ -1,21 +1,24 @@
 // Config
-import { octokit } from "@/config/octokit"
+import { octokit } from '@/config/octokit'
 
 // Types
-import type { GitHubAPIResponse } from "@/types/api-github"
+import type { GitHubAPIResponse } from '@/types/api-github'
 
 export async function getAssets(githubRepoName: string) {
-	const { data } = await octokit.rest.repos.get({
-		owner: "RaulCatalinas",
-		repo: githubRepoName
-	})
+  const { data } = await octokit.rest.repos.get({
+    owner: 'RaulCatalinas',
+    repo: githubRepoName
+  })
 
-	const { releases_url } = data
+  // eslint-disable-next-line @typescript-eslint/naming-convention
+  const { releases_url } = data
 
-	const githubAPIUrl = releases_url.replace("{/id}", "/latest")
+  const githubAPIUrl = releases_url.replace('{/id}', '/latest')
 
-	const res = await fetch(githubAPIUrl)
-	const { assets }: GitHubAPIResponse = await res.json()
+  const res = await fetch(githubAPIUrl)
 
-	return assets
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+  const { assets }: GitHubAPIResponse = await res.json()
+
+  return assets
 }

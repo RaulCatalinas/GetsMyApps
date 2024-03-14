@@ -1,38 +1,38 @@
 {
-	"renderApps": {
-		"error": "No se han encontrado aplicaciones que coincidan con su búsqueda",
-		"available": "Disponible para"
-	},
-	"dropdowns": {
-		"language": {
-			"Spanish": "Español",
-			"English": "Inglés"
-		}
-	},
-	"labels": {
-		"dropdowns": {
-			"contact": "Método de contacto",
-			"language": "Seleccionar idioma"
-		}
-	},
-	"modal": {
-		"text": "Hay una versión en español disponible, ¿Quieres ir a la versión en español?",
-		"yes": "Si"
-	},
-	"controllers": {
-		"download": {
-			"error": "Lo sentimos, el archivo que intenta descargar no está disponible para su sistema operativo."
-		}
-	},
-	"search": {
-		"label": "Nombre de la app o sistema operativo",
-		"placeholder": "Nombre de la app o sistema operativo"
-	},
-	"share": {
-		"success": "URL copiada en el portapapeles",
-		"error": "¡Oops! Se ha producido un problema al intentar copiar la URL en el portapapeles. Vuelva a intentarlo más tarde."
-	},
-	"shareAPI": {
-		"text": "Descarga gratis las apps de Raul Catalinas Esteban"
-	}
+  "renderApps": {
+    "error": "No se han encontrado aplicaciones que coincidan con su búsqueda",
+    "available": "Disponible para"
+  },
+  "dropdowns": {
+    "language": {
+      "Spanish": "Español",
+      "English": "Inglés"
+    }
+  },
+  "labels": {
+    "dropdowns": {
+      "contact": "Método de contacto",
+      "language": "Seleccionar idioma"
+    }
+  },
+  "modal": {
+    "text": "Hay una versión en español disponible, ¿Quieres ir a la versión en español?",
+    "yes": "Si"
+  },
+  "controllers": {
+    "download": {
+      "error": "Lo sentimos, el archivo que intenta descargar no está disponible para su sistema operativo."
+    }
+  },
+  "search": {
+    "label": "Nombre de la app o sistema operativo",
+    "placeholder": "Nombre de la app o sistema operativo"
+  },
+  "share": {
+    "success": "URL copiada en el portapapeles",
+    "error": "¡Oops! Se ha producido un problema al intentar copiar la URL en el portapapeles. Vuelva a intentarlo más tarde."
+  },
+  "shareAPI": {
+    "text": "Descarga gratis las apps de Raul Catalinas Esteban"
+  }
 }

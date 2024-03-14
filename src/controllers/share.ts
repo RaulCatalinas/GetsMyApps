@@ -1,43 +1,43 @@
 // Utils
-import { copyTextToClipboard } from "@/utils/clipboard"
+import { copyTextToClipboard } from '@/utils/clipboard'
 
 // Notifications
-import { notify } from "@/notifications/notify"
+import { notify } from '@/notifications/notify'
 
 // i18n
-import { getJson, getLangFromUrl } from "@/i18n/utils"
+import { getJson, getLangFromUrl } from '@/i18n/utils'
 
 // Constants
-import { SHARE_DATA } from "@/constants/share"
+import { SHARE_DATA } from '@/constants/share'
 
 export async function shareController() {
-	const url = new URL(location.href)
-	const lang = getLangFromUrl(url)
-	const { share } = getJson(lang)
+  const url = new URL(location.href)
+  const lang = getLangFromUrl(url)
+  const { share } = getJson(lang)
 
-	if (navigator.share) {
-		try {
-			await navigator.share(SHARE_DATA)
-		} catch (error) {
-			console.error(error)
-		}
+  if ('share' in navigator) {
+    try {
+      await navigator.share(SHARE_DATA)
+    } catch (error) {
+      console.error(error)
+    }
 
-		return
-	}
+    return
+  }
 
-	try {
-		await copyTextToClipboard(location.href)
+  try {
+    await copyTextToClipboard(location.href)
 
-		notify({
-			text: share.success,
-			type: "success"
-		})
-	} catch (error) {
-		console.error(error)
+    notify({
+      text: share.success,
+      type: 'success'
+    })
+  } catch (error) {
+    console.error(error)
 
-		notify({
-			text: share.error,
-			type: "error"
-		})
-	}
+    notify({
+      text: share.error,
+      type: 'error'
+    })
+  }
 }

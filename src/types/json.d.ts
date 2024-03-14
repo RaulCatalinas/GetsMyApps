@@ -1,4 +1,4 @@
 export interface JsonDescriptions {
-	en: string
-	es: string
+  en: string
+  es: string
 }
