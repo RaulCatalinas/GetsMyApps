@@ -27,7 +27,6 @@
 		"toastify-js": "1.12.0"
 	},
 	"devDependencies": {
-		"@biomejs/biome": "1.6.0",
 		"@s-ui/mono": "2.45.0",
 		"@types/toastify-js": "1.12.3",
 		"@typescript-eslint/eslint-plugin": "^6.4.0",
