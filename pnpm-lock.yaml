@@ -86,8 +86,8 @@ devDependencies:
     specifier: 0.13.0
     version: 0.13.0
   supabase:
-    specifier: 1.148.6
-    version: 1.148.6
+    specifier: 1.150.0
+    version: 1.150.0
   typescript:
     specifier: 5.4.2
     version: 5.4.2
@@ -6626,8 +6626,8 @@ packages:
     dependencies:
       s.color: 0.0.15
 
-  /supabase@1.148.6:
-    resolution: {integrity: sha512-/VXbN0C/r/o1TkHGw4EXYvwtwfsSvRaBd6lWa5HamcC6HdFpbof8VsSglWjiie5ONTg3lwqv06wcOrtdpzz/Bg==}
+  /supabase@1.150.0:
+    resolution: {integrity: sha512-hjyXukIww6Jc37Wq9urUldS61a7lZdw6J8Ky/TaScGFqTsO4DbPXUoOxHHaWYSM2ucV+4ejNZ5jYpAGmorApkA==}
     engines: {npm: '>=8'}
     hasBin: true
     requiresBuild: true
