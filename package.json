@@ -18,7 +18,7 @@
 		"@astrojs/vercel": "7.3.6",
 		"@supabase/supabase-js": "2.39.8",
 		"@vercel/speed-insights": "1.0.10",
-		"astro": "4.5.5",
+		"astro": "4.5.9",
 		"astro-seo": "0.8.3",
 		"cloudinary": "2.0.3",
 		"octokit": "3.1.2",
