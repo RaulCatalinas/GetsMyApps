@@ -18,7 +18,7 @@ export default function SearchForm(props: Props) {
       class={`
 				flex flex-col items-center justify-center 
 				w-[${divWidth}px] h-max rounded-3xl 
-			bg-gray-900 shadow-md border border-gray-700
+        bg-gray-900 shadow-md border border-gray-700
 			`}
       id="search"
     >
@@ -30,7 +30,12 @@ export default function SearchForm(props: Props) {
       </label>
       <input
         type="search"
-        class="flex-grow-0 px-4 py-2 text-sm text-gray-700 bg-gray-100 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 m-2 placeholder:text-center w-[calc(100%_-_1rem)]"
+        class={`
+          flex-grow-0 px-4 py-2 text-sm text-gray-700 
+          bg-gray-100 rounded-xl focus:outline-none 
+          focus:ring-2 focus:ring-blue-500 m-2 
+          placeholder:text-center w-[calc(100%_-_1rem)]
+        `}
         placeholder={search.placeholder}
         onInput={event => {
           props.handleChange(event.target.value)
