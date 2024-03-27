@@ -40,7 +40,7 @@
 		"markdownlint": "0.33.0",
 		"prettier": "3.2.5",
 		"prettier-plugin-astro": "0.13.0",
-		"supabase": "1.148.6",
+		"supabase": "1.150.0",
 		"typescript": "5.4.2"
 	}
 }
