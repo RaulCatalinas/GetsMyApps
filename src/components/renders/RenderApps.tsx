@@ -1,12 +1,11 @@
 // Types
 import type { AppWithLogo } from '@/types/app'
 
-// Utils
-import { firstLetterToUpperCase } from '@/utils/first-letter-to-uppercase'
-
 // Components
 import DownloadButton from '../buttons/DownloadButton'
 import SearchForm from '../forms/SearchForm'
+import RenderAppLogo from './RenderAppLogo'
+import RenderOS from './RenderOS'
 
 // Hooks
 import { useSearch } from '@/hooks/useSearch'
@@ -16,7 +15,6 @@ import { getJson, getLangFromUrl } from '@/i18n/utils'
 
 // SolidJS
 import { For } from 'solid-js'
-
 interface Props {
   apps: AppWithLogo[]
   i18nURL: URL
@@ -41,55 +39,39 @@ export default function RenderApps(props: Props) {
         </h1>
       )}
 
-      <div class="grid grid-cols-2 max-sm:grid-cols-1 mt-4 gap-4 place-items-center">
-        {getFilteredApps().length > 0 &&
-          getFilteredApps().map(app => {
-            const {
-              name,
-              descriptions,
-              logoURL,
-              alternativeText,
-              githubRepoName,
-              osArray
-            } = app
+      {getFilteredApps().length > 0 && (
+        <div class="grid grid-cols-2 max-sm:grid-cols-1 mt-4 gap-4 place-items-center">
+          <For each={getFilteredApps()}>
+            {app => {
+              const {
+                name,
+                descriptions,
+                logoURL,
+                alternativeText,
+                githubRepoName,
+                osArray
+              } = app
 
-            const description = descriptions[lang]
+              const description = descriptions[lang]
 
-            return (
-              <article class="bg-white rounded-lg shadow-md mt-4 p-4 w-max">
-                <h1 class="text-xl font-semibold text-center text-balance">
-                  {name}
-                </h1>
-                <p class="text-center text-pretty">{description}</p>
-                <p class="text-center text-pretty mb-2">
-                  {renderApps.available}:
-                </p>
-                <div
-                  class={`
-                    grid grid-cols-${osArray.length === 1 ? 1 : 3}
-                    gap-2 place-items-center
-                  `}
-                >
-                  <For each={osArray}>
-                    {os => (
-                      <span class="inline-flex rounded-full p-2 text-base font-medium bg-gray-200 text-gray-800 text-pretty">
-                        {firstLetterToUpperCase(os)}
-                      </span>
-                    )}
-                  </For>
-                </div>
-                <img
-                  src={logoURL}
-                  alt={alternativeText}
-                  class="mx-auto m-3 flex items-center justify-center"
-                  width="125"
-                  height="125"
-                />
-                <DownloadButton githubRepoName={githubRepoName} />
-              </article>
-            )
-          })}
-      </div>
+              return (
+                <article class="bg-white rounded-lg shadow-md mt-4 p-4 w-max">
+                  <h1 class="text-xl font-semibold text-center text-balance">
+                    {name}
+                  </h1>
+                  <p class="text-center text-pretty">{description}</p>
+                  <RenderOS osArray={osArray} i18nURL={props.i18nURL} />
+                  <RenderAppLogo
+                    logoURL={logoURL}
+                    alternativeText={alternativeText}
+                  />
+                  <DownloadButton githubRepoName={githubRepoName} />
+                </article>
+              )
+            }}
+          </For>
+        </div>
+      )}
     </div>
   )
 }
