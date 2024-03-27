@@ -37,7 +37,7 @@
 		"eslint-plugin-n": "^15.0.0 || ^16.0.0 ",
 		"eslint-plugin-promise": "^6.0.0",
 		"eslint-plugin-solid": "0.13.2",
-		"markdownlint": "0.33.0",
+		"markdownlint": "0.34.0",
 		"prettier": "3.2.5",
 		"prettier-plugin-astro": "0.13.0",
 		"supabase": "1.150.0",
