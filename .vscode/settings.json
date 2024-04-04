@@ -22,5 +22,6 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.tabSize": 2
   },
-  "prettier.documentSelectors": ["**/*.astro"]
+  "prettier.documentSelectors": ["**/*.astro"],
+  "typescript.tsdk": "node_modules\\typescript\\lib"
 }
