@@ -15,7 +15,7 @@
 		"@astrojs/check": "0.5.10",
 		"@astrojs/solid-js": "4.0.1",
 		"@astrojs/tailwind": "5.1.0",
-		"@astrojs/vercel": "7.3.6",
+		"@astrojs/vercel": "7.5.0",
 		"@supabase/supabase-js": "2.39.8",
 		"@vercel/speed-insights": "1.0.10",
 		"astro": "4.5.9",
@@ -23,7 +23,7 @@
 		"cloudinary": "2.0.3",
 		"octokit": "3.1.2",
 		"solid-js": "1.8.15",
-		"tailwindcss": "3.4.1",
+		"tailwindcss": "3.4.3",
 		"toastify-js": "1.12.0"
 	},
 	"devDependencies": {
@@ -32,7 +32,7 @@
 		"@typescript-eslint/eslint-plugin": "^6.4.0",
 		"eslint": "^8.0.1",
 		"eslint-config-standard-with-typescript": "^43.0.1",
-		"eslint-plugin-astro": "0.31.4",
+		"eslint-plugin-astro": "0.33.1",
 		"eslint-plugin-import": "^2.25.2",
 		"eslint-plugin-n": "^15.0.0 || ^16.0.0 ",
 		"eslint-plugin-promise": "^6.0.0",
@@ -40,7 +40,7 @@
 		"markdownlint": "0.34.0",
 		"prettier": "3.2.5",
 		"prettier-plugin-astro": "0.13.0",
-		"supabase": "1.150.0",
+		"supabase": "1.151.1",
 		"typescript": "5.4.2"
 	}
 }
