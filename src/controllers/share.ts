@@ -11,7 +11,7 @@ import { getJson, getLangFromUrl } from '@/i18n/utils'
 import { SHARE_DATA } from '@/constants/share'
 
 // Logs
-import { writeError } from '@/logs/logger'
+import { writeLog } from '@/logs/logger'
 
 export async function shareController() {
   const url = new URL(location.href)
@@ -22,7 +22,7 @@ export async function shareController() {
     try {
       await navigator.share(SHARE_DATA)
     } catch (error) {
-      writeError(error)
+      writeLog({ level: 'error', message: error })
     }
 
     return
@@ -36,7 +36,7 @@ export async function shareController() {
       type: 'success'
     })
   } catch (error) {
-    writeError(error)
+    writeLog({ level: 'error', message: error })
 
     notify({
       text: share.error,
