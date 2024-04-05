@@ -8,20 +8,18 @@ import type { App, AppWithOutID } from '@/types/app'
 import { getLogo } from './get-logo'
 
 // Logs
-import { writeLog } from '@/logs/logger'
+import { writeError } from '@/logs/logger'
 
 // eslint-disable-next-line @typescript-eslint/no-invalid-void-type
 export async function getApps(): Promise<void | AppWithOutID[]> {
   try {
-    writeLog({ level: 'info', message: 'Getting the apps from the backend' })
-
     const { data, error } = await supabaseClient
       .from('Apps')
       .select('*')
       .returns<App[]>()
 
     if (error != null) {
-      writeLog({ level: 'error', message: error })
+      writeError(error)
 
       return
     }
@@ -52,6 +50,6 @@ export async function getApps(): Promise<void | AppWithOutID[]> {
       })
     )
   } catch (error) {
-    writeLog({ level: 'error', message: error })
+    writeError(error)
   }
 }

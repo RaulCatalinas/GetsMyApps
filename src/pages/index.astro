@@ -14,7 +14,7 @@ import type { AppWithOutID } from '@/types/app'
 import { configureCloudinary } from '@/config/cloudinary'
 
 // Logs
-import { writeLog } from '@/logs/logger'
+import { writeError } from '@/logs/logger'
 
 configureCloudinary()
 
@@ -24,10 +24,7 @@ let anErrorHasOccurred: boolean = false
 try {
   apps = await getApps()
 } catch (error) {
-  writeLog({
-    level: 'error',
-    message: error
-  })
+  writeError(error)
 
   anErrorHasOccurred = true
 }
