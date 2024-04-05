@@ -8,20 +8,23 @@ import Layout from '@/layouts/Layout.astro'
 import { getApps } from '@/services/get-apps'
 
 // Types
-import type { AppWithLogo } from '@/types/app'
+import type { AppWithOutID } from '@/types/app'
 
 // Config
 import { configureCloudinary } from '@/config/cloudinary'
 
+// Logs
+import { writeError } from '@/logs/logger'
+
 configureCloudinary()
 
-let apps: AppWithLogo[] | void = []
+let apps: AppWithOutID[] | void = []
 let anErrorHasOccurred: boolean = false
 
 try {
   apps = await getApps()
 } catch (error) {
-  console.error(error)
+  writeError(error)
   anErrorHasOccurred = true
 }
 

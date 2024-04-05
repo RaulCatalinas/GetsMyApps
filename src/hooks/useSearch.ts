@@ -2,10 +2,10 @@
 import { createSignal } from 'solid-js'
 
 // Types
-import type { AppWithLogo } from '@/types/app'
+import type { AppWithOutID } from '@/types/app'
 
-export function useSearch(apps: AppWithLogo[]) {
-  const [getFilteredApps, setFilteredApps] = createSignal<AppWithLogo[]>(apps)
+export function useSearch(apps: AppWithOutID[]) {
+  const [getFilteredApps, setFilteredApps] = createSignal<AppWithOutID[]>(apps)
 
   const handleChange = (value: string) => {
     setFilteredApps(
@@ -13,7 +13,7 @@ export function useSearch(apps: AppWithLogo[]) {
         return (
           app.name.toLocaleLowerCase().includes(value.toLocaleLowerCase()) ||
           app.osArray.some(os =>
-            os.toLowerCase().includes(value.toLocaleLowerCase())
+            os.toLocaleLowerCase().includes(value.toLocaleLowerCase())
           )
         )
       })

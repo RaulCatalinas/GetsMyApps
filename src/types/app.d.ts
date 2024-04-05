@@ -3,7 +3,15 @@ import type { Database } from './supabase'
 
 export type App = Pick<
   Database['public']['Tables']['Apps']['Row'],
-  'name' | 'descriptions' | 'alternativeText' | 'githubRepoName' | 'osArray'
+  | 'name'
+  | 'descriptions'
+  | 'alternativeText'
+  | 'githubRepoName'
+  | 'osArray'
+  | 'id'
+  | 'logoURL'
 >
 
-export type AppWithLogo = App & { logoURL: string }
+export type AppWithOutID = Omit<App, 'id'>
+
+export type AppID = `${string}-${string}-${string}-${string}-${string}`

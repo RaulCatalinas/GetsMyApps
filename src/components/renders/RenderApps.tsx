@@ -1,5 +1,5 @@
 // Types
-import type { AppWithLogo } from '@/types/app'
+import type { AppWithOutID } from '@/types/app'
 
 // Components
 import DownloadButton from '../buttons/DownloadButton'
@@ -15,8 +15,9 @@ import { getJson, getLangFromUrl } from '@/i18n/utils'
 
 // SolidJS
 import { For } from 'solid-js'
+
 interface Props {
-  apps: AppWithLogo[]
+  apps: AppWithOutID[]
   i18nURL: URL
 }
 
@@ -62,7 +63,7 @@ export default function RenderApps(props: Props) {
                   <p class="text-center text-pretty">{description}</p>
                   <RenderOS osArray={osArray} i18nURL={props.i18nURL} />
                   <RenderAppLogo
-                    logoURL={logoURL}
+                    logoURL={logoURL ?? ''}
                     alternativeText={alternativeText}
                   />
                   <DownloadButton githubRepoName={githubRepoName} />
