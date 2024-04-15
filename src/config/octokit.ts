@@ -1,5 +1,9 @@
+// Octokit
 import { Octokit } from 'octokit'
 
+// Constants
+import { GITHUB_ACCESS_TOKEN } from '@/constants/env'
+
 export const octokit = new Octokit({
-  auth: import.meta.env.GITHUB_ACCESS_TOKEN
+  auth: GITHUB_ACCESS_TOKEN
 })

@@ -4,9 +4,6 @@ import Modal from '@/components/modal/Modal.astro'
 import RenderApps from '@/components/renders/RenderApps'
 import Layout from '@/layouts/Layout.astro'
 
-// Services
-import { getApps } from '@/services/get-apps'
-
 // Types
 import type { AppWithOutID } from '@/types/app'
 
@@ -16,13 +13,18 @@ import { configureCloudinary } from '@/config/cloudinary'
 // Logs
 import { writeError } from '@/logs/logger'
 
+// API
+import { GET } from './api/get-apps'
+
 configureCloudinary()
 
 let apps: AppWithOutID[] | void = []
 let anErrorHasOccurred: boolean = false
 
 try {
-  apps = await getApps()
+  const res = await GET(Astro)
+
+  apps = await res.json()
 } catch (error) {
   writeError(error)
 

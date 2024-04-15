@@ -29,18 +29,18 @@
   "devDependencies": {
     "@s-ui/mono": "2.45.0",
     "@types/toastify-js": "1.12.3",
-    "@typescript-eslint/eslint-plugin": "7.5.0",
-    "eslint": "8.57.0",
+    "@typescript-eslint/eslint-plugin": "^7.0.1",
+    "eslint": "^8.0.1",
     "eslint-config-standard-with-typescript": "43.0.1",
-    "eslint-plugin-astro": "0.33.1",
-    "eslint-plugin-import": "2.29.1",
-    "eslint-plugin-n": "16.6.2",
-    "eslint-plugin-promise": "6.1.1",
+    "eslint-plugin-astro": "0.34.0",
+    "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-n": "^15.0.0 || ^16.0.0 ",
+    "eslint-plugin-promise": "^6.0.0",
     "eslint-plugin-solid": "0.13.2",
     "markdownlint": "0.34.0",
     "prettier": "3.2.5",
     "prettier-plugin-astro": "0.13.0",
-    "supabase": "1.153.4",
-    "typescript": "5.4.4"
+    "supabase": "1.157.2",
+    "typescript": "5.4.5"
   }
 }
