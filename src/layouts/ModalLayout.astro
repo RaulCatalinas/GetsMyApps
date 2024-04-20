@@ -1,0 +1,23 @@
+---
+import type { Language } from '@/types/language'
+
+interface Props {
+  language: Language
+}
+
+const {language} = Astro.props
+---
+
+<dialog data-language={language} id="modal" class="backdrop:bg-black/80">
+  <div class="max-w-md p-4 rounded-md bg-white shadow-md">
+    <slot />
+  </div>
+</dialog>
+
+<script>
+  const modal = document.getElementById('modal')
+
+  if (modal instanceof HTMLDialogElement) {
+    modal.showModal()
+  }
+</script>
