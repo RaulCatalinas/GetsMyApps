@@ -5,7 +5,10 @@
     "davidanson.vscode-markdownlint",
     "dbaeumer.vscode-eslint",
     "esbenp.prettier-vscode",
-    "oven.bun-vscode"
+    "oven.bun-vscode",
+    "yoavbls.pretty-ts-errors",
+    "pflannery.vscode-versionlens",
+    "sheltonlouis.astro-snippets"
   ],
   "unwantedRecommendations": []
 }
