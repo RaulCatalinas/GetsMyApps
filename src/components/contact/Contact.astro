@@ -1,0 +1,37 @@
+---
+// Components
+import RenderSocialNetwork from '../renders/RenderSocialNetwork.astro'
+
+// i18n
+import { getJson, getLangFromUrl } from '@/i18n/utils'
+
+const lang = getLangFromUrl(Astro.url)
+
+const { socialNetworks } = getJson(lang)
+---
+
+<div class="flex flex-col items-center justify-center">
+  <h3 class="text-white text-lg mb-2">{socialNetworks.label}</h3>
+  <div class="flex flex-row gap-3">
+    <RenderSocialNetwork
+      href="https://twitter.com/CatalinasRaul"
+      imageURL="/social-networks/twitter.svg"
+      altText={socialNetworks.altText.twitter}
+    />
+    <RenderSocialNetwork
+      href="https://www.instagram.com/raulf1foreveryt_oficial"
+      imageURL="/social-networks/instagram.svg"
+      altText={socialNetworks.altText.instagram}
+    />
+    <RenderSocialNetwork
+      href="https://www.facebook.com/raul.catalinasesteban"
+      imageURL="/social-networks/facebook.svg"
+      altText={socialNetworks.altText.facebook}
+    />
+    <RenderSocialNetwork
+      href="https://github.com/RaulCatalinas"
+      imageURL="/social-networks/github.svg"
+      altText={socialNetworks.altText.github}
+    />
+  </div>
+</div>

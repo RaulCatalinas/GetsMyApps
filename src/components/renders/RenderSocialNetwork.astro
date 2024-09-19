@@ -1,0 +1,22 @@
+---
+import { Image } from 'astro:assets'
+
+interface Props {
+  href: string
+  imageURL: string
+  altText: string
+}
+
+const { href, imageURL, altText } = Astro.props
+---
+
+<a {href} target="_blank" rel="noopener noreferrer">
+  <Image
+    src={imageURL}
+    alt={altText}
+    width={35}
+    height={35}
+    class="inline-block md:hover:cursor-pointer md:hover:scale-110 md:active:scale-90"
+    loading="eager"
+  />
+</a>

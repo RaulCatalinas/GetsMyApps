@@ -34,5 +34,16 @@
   },
   "shareAPI": {
     "text": "Descarga gratis las apps de Raul Catalinas Esteban"
+  },
+
+  "socialNetworks": {
+    "label": "Método de contacto",
+
+    "altText": {
+      "twitter": "Logo de Twitter",
+      "instagram": "Logo de Instagram",
+      "facebook": "Logo de Facebook",
+      "github": "Logo de Github"
+    }
   }
 }
