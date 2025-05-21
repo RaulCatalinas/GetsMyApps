@@ -39,7 +39,7 @@
     "prettier-plugin-astro": "0.14.1",
     "supabase": "2.22.12",
     "typescript": "5.8.3",
-    "eslint-config-love": "119.0.0"
+    "eslint-config-love": "120.0.0"
   },
   "trustedDependencies": [
     "@vercel/speed-insights"
