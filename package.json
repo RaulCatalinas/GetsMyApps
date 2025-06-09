@@ -37,7 +37,7 @@
     "markdownlint": "0.38.0",
     "prettier": "3.5.3",
     "prettier-plugin-astro": "0.14.1",
-    "supabase": "2.23.4",
+    "supabase": "2.24.3",
     "typescript": "5.8.3",
     "eslint-config-love": "120.0.0"
   },
