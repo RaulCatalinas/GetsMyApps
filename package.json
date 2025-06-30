@@ -18,14 +18,14 @@
     "@astrojs/solid-js": "5.1.0",
     "@astrojs/tailwind": "6.0.2",
     "@astrojs/vercel": "8.2.0",
-    "@supabase/supabase-js": "2.50.0",
+    "@supabase/supabase-js": "2.50.2",
     "@vercel/speed-insights": "1.2.0",
     "astro": "5.10.1",
     "astro-seo": "0.8.4",
     "cloudinary": "2.7.0",
     "octokit": "5.0.3",
     "solid-js": "1.9.7",
-    "tailwindcss": "4.1.10",
+    "tailwindcss": "4.1.11",
     "toastify-js": "1.12.0"
   },
   "devDependencies": {
