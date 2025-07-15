@@ -66,7 +66,7 @@ export default function RenderApps(props: Props) {
                     logoURL={logoURL ?? ''}
                     alternativeText={alternativeText}
                   />
-                  <DownloadButton githubRepoName={githubRepoName} />
+                  <DownloadButton githubRepoName={githubRepoName} lang={lang} />
                 </article>
               )
             }}

@@ -4,8 +4,12 @@ import { downloadController } from '@/controllers/download-controller'
 // Icons
 import DownloadIcon from '@/icons/buttons/DownloadIcon'
 
+// Types
+import type { Language } from '@/types/language'
+
 interface Props {
   githubRepoName: string
+  lang: Language
 }
 
 export default function DownloadButton(props: Props) {
@@ -21,7 +25,9 @@ export default function DownloadButton(props: Props) {
       onClick={handleClick}
     >
       <DownloadIcon />
-      <span class="pl-2 text-2xl text-center">Download</span>
+      <span class="pl-2 text-2xl text-center">
+        {props.lang === 'en' ? 'Download' : 'Descargar'}
+      </span>
     </button>
   )
 }

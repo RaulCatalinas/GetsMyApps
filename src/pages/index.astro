@@ -7,16 +7,11 @@ import Layout from '@/layouts/Layout.astro'
 // Types
 import type { AppWithOutID } from '@/types/app'
 
-// Config
-import { configureCloudinary } from '@/config/cloudinary'
-
 // Logs
 import { writeError } from '@/logs/logger'
 
 // API
 import { GET } from './api/get-apps'
-
-configureCloudinary()
 
 let apps: AppWithOutID[] | void = []
 let anErrorHasOccurred: boolean = false

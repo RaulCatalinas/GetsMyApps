@@ -1,11 +1,9 @@
-// Supabase
-import { supabaseClient } from '@/config/supabase'
+// Config
+import { turso } from '@/config/turso'
 
 // Types
-import type { App, AppWithOutID } from '@/types/app'
-
-// Services
-import { getLogo } from './get-logo'
+import type { AppWithOutID } from '@/types/app'
+import type { JsonDescriptions } from '@/types/json'
 
 // Logs
 import { writeError } from '@/logs/logger'
@@ -13,32 +11,34 @@ import { writeError } from '@/logs/logger'
 // eslint-disable-next-line @typescript-eslint/no-invalid-void-type
 export async function getApps(): Promise<void | AppWithOutID[]> {
   try {
-    const { data, error } = await supabaseClient
-      .from('Apps')
-      .select('*')
-      .returns<App[]>()
-
-    if (error != null) {
-      writeError(error)
-
-      return
-    }
+    const { rows } = await turso.execute('SELECT * FROM apps')
 
     return await Promise.all(
-      data.map(async app => {
+      rows.map(async app => {
         const {
-          name,
-          descriptions,
-          githubRepoName,
-          alternativeText,
-          osArray,
-          id: appID,
+          name: nameValue,
+          descriptions: descriptionsValue,
+          githubRepoName: githubRepoNameValue,
+          alternativeText: alternativeTextValue,
+          osArray: osArrayString,
+          id: appIDValue,
           logoURL: logoURLFromDB
         } = app
 
-        const logoURL =
-          logoURLFromDB ?? (await getLogo({ appName: name, appID }))
+        const name = String(nameValue)
+        const descriptions = descriptionsValue as unknown as JsonDescriptions
+        const githubRepoName = String(githubRepoNameValue)
+        const alternativeText = String(alternativeTextValue)
+        const logoURL = String(logoURLFromDB)
 
+        let osArray: string[]
+
+        try {
+          osArray = JSON.parse(osArrayString as string)
+        } catch (error) {
+          console.error('Error parsing osArray:', error)
+          osArray = []
+        }
         return {
           name,
           descriptions,

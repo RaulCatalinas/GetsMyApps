@@ -3,10 +3,8 @@
 /// <reference types="astro/client" />
 
 interface ImportMetaEnv {
-  readonly SUPABASE_API_KEY: string
-  readonly CLOUDINARY_APY_KEY: string
-  readonly CLOUDINARY_APY_SECRET: string
-  readonly CLOUDINARY_CLOUD_NAME: string
+  readonly TURSO_DATABASE_URL: string
+  readonly TURSO_AUTH_TOKEN: string
   readonly GITHUB_ACCESS_TOKEN: string
 }
 
