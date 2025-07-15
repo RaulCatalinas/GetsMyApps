@@ -21,7 +21,6 @@ export async function getApps(): Promise<void | AppWithOutID[]> {
           githubRepoName: githubRepoNameValue,
           alternativeText: alternativeTextValue,
           osArray: osArrayString,
-          id: appIDValue,
           logoURL: logoURLFromDB
         } = app
 
