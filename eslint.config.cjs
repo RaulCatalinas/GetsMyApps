@@ -7,7 +7,7 @@ module.exports = [
   eslintPluginSolid.configs['flat/typescript'],
   {
     ...require('eslint-config-love'),
-    files: ['**/*.js', '**/*.ts'],
+    files: ['**/*.ts', '**/*.tsx', '**/*.astro'],
     rules: {
       'astro/no-set-html-directive': 'error',
       '@typescript-eslint/space-before-function-paren': 'off',
