@@ -1,0 +1,44 @@
+---
+// Components
+import DownloadButton from '../buttons/DownloadButton'
+import RenderAppLogo from './RenderAppLogo.astro'
+import RenderOS from './RenderOS.astro'
+
+// Types
+import type { JsonDescriptions } from '@/types/json'
+
+// i18n
+import { getLangFromUrl } from '@/i18n/utils'
+
+interface Props {
+  alternativeText: string
+  descriptions: JsonDescriptions
+  githubRepoName: string
+  logoURL: string
+  name: string
+  osArray: string[]
+  i18nURL: URL
+}
+
+const {
+  alternativeText,
+  descriptions,
+  githubRepoName,
+  logoURL,
+  name,
+  osArray,
+  i18nURL
+} = Astro.props
+
+const lang = getLangFromUrl(i18nURL)
+---
+
+<article class="bg-white rounded-lg shadow-md mt-4 p-4 w-max">
+  <h1 class="text-xl font-semibold text-center text-balance">
+    {name}
+  </h1>
+  <p class="text-center text-pretty">{descriptions[lang]}</p>
+  <RenderOS {osArray} {i18nURL} />
+  <RenderAppLogo {logoURL} {alternativeText} />
+  <DownloadButton {githubRepoName} {lang} client:load />
+</article>

@@ -20,7 +20,7 @@ export default function DownloadButton(props: Props) {
   return (
     <button
       type="button"
-      class="bg-green-500 hover:bg-green-600 hover:scale-105 active:scale-90 text-black font-bold py-2 px-4 rounded w-full flex justify-center items-center"
+      class="bg-green-500 hover:bg-green-600 hover:scale-105 active:scale-90 text-black font-bold py-2 px-4 rounded w-full flex justify-center items-center hover:cursor-pointer transition-colors"
       // eslint-disable-next-line @typescript-eslint/no-misused-promises
       onClick={handleClick}
     >

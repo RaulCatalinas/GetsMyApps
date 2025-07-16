@@ -1,0 +1,20 @@
+---
+import { Image } from 'astro:assets'
+
+interface Props {
+  logoURL: string
+  alternativeText: string
+}
+
+const { logoURL, alternativeText } = Astro.props
+---
+
+<Image
+  src={logoURL}
+  alt={alternativeText}
+  class="mx-auto m-3 flex items-center justify-center"
+  width="125"
+  height="125"
+  decoding="async"
+  loading="eager"
+/>

@@ -25,7 +25,7 @@ const { modal } = getJson(language)
     {modal.text}
   </h3>
   <div class="flex flex-col items-center justify-center mt-4 gap-3">
-    <ModalButton type="affirmative" id="yes-btn" {language} client:idle />
-    <ModalButton type="negative" id="no-btn" {language} client:idle />
+    <ModalButton type="affirmative" id="yes-btn" {language} client:load />
+    <ModalButton type="negative" id="no-btn" {language} client:load />
   </div>
 </ModalLayout>

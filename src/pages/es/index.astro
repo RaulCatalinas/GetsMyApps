@@ -1,7 +1,7 @@
 ---
 // Components
 import Modal from '@/components/modal/Modal.astro'
-import RenderApps from '@/components/renders/RenderApps'
+import RenderApps from '@/components/renders/RenderApps.astro'
 import Layout from '@/layouts/Layout.astro'
 
 // Types
@@ -44,7 +44,7 @@ const isBrowserInEnglish = Astro.preferredLocale?.includes('en') ?? false
           No hay aplicaciones disponibles en este momento, inténtelo más tarde.
         </h1>
       ) : (
-        <RenderApps apps={apps} i18nURL={Astro.url} client:load />
+        <RenderApps apps={apps} i18nURL={Astro.url} />
       )
     }
   </main>

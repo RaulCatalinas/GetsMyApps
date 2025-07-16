@@ -21,7 +21,7 @@ export default function ModalButton(props: Props) {
     <button
       type="button"
       id={props.id}
-      class="inline-flex items-center justify-center px-4 py-2 rounded-md text-white bg-gray-700 hover:bg-gray-800 hover:scale-105 active:scale-90 text-center text-pretty w-full text-lg"
+      class="inline-flex items-center justify-center px-4 py-2 rounded-md text-white bg-gray-700 hover:bg-gray-800 hover:scale-105 active:scale-90 text-center text-pretty w-full text-lg hover:cursor-pointer transition-colors"
       onClick={() => {
         modalController({ id: props.id, language: props.language })
       }}

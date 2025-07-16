@@ -1,0 +1,57 @@
+---
+// Components
+
+// Types
+import type { AppWithOutID } from '@/types/app'
+
+// i18n
+import { getJson, getLangFromUrl } from '@/i18n/utils'
+import AppCard from './AppCard.astro'
+
+interface Props {
+  apps: AppWithOutID[]
+  i18nURL: URL
+}
+
+const { apps, i18nURL } = Astro.props
+
+const lang = getLangFromUrl(i18nURL)
+
+const { renderApps } = getJson(lang)
+---
+
+<div class="flex flex-col items-center justify-center">
+  {
+    apps.length === 0 && (
+      <h1 class="text-white text-center text-pretty text-4xl font-sans m-4 shadow-md">
+        {renderApps.error}
+      </h1>
+    )
+  }
+  {
+    apps.length > 0 && (
+      <div class="grid grid-cols-2 max-sm:grid-cols-1 mt-4 gap-4 place-items-center">
+        {apps.map(
+          ({
+            alternativeText,
+            descriptions,
+            githubRepoName,
+            logoURL,
+            name,
+            osArray
+          }) => (
+            <AppCard
+              alternativeText={alternativeText}
+              descriptions={descriptions}
+              githubRepoName={githubRepoName}
+              logoURL={logoURL}
+              name={name}
+              osArray={osArray}
+              i18nURL={i18nURL}
+            />
+          )
+        )}
+      </div>
+    )
+  }
+</div>
