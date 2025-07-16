@@ -5,10 +5,14 @@ interface Props {
   language: Language
 }
 
-const {language} = Astro.props
+const { language } = Astro.props
 ---
 
-<dialog data-language={language} id="modal" class="backdrop:bg-black/80">
+<dialog
+  data-language={language}
+  id="modal"
+  class="backdrop:bg-black/80 fixed z-50 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+>
   <div class="max-w-md p-4 rounded-md bg-white shadow-md">
     <slot />
   </div>
