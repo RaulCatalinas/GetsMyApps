@@ -21,16 +21,18 @@ export async function getApps(): Promise<void | AppWithOutID[]> {
           githubRepoName: githubRepoNameValue,
           alternativeText: alternativeTextValue,
           osArray: osArrayString,
-          logoURL: logoURLFromDB
+          logoURL: logoURLFromDB,
+          in_development: inDevelopmentValue
         } = app
 
         const name = String(nameValue)
-        const descriptions = descriptionsValue as unknown as JsonDescriptions
         const githubRepoName = String(githubRepoNameValue)
         const alternativeText = String(alternativeTextValue)
         const logoURL = String(logoURLFromDB)
+        const inDevelopment = Boolean(inDevelopmentValue)
 
         let osArray: string[]
+        let descriptions: JsonDescriptions
 
         try {
           osArray = JSON.parse(osArrayString as string)
@@ -38,13 +40,21 @@ export async function getApps(): Promise<void | AppWithOutID[]> {
           console.error('Error parsing osArray:', error)
           osArray = []
         }
+
+        try {
+          descriptions = JSON.parse(descriptionsValue as string)
+        } catch (error) {
+          console.error('Error parsing descriptions:', error)
+          descriptions = { en: '', es: '' }
+        }
         return {
           name,
           descriptions,
           githubRepoName,
           logoURL,
           alternativeText,
-          osArray
+          osArray,
+          inDevelopment
         }
       })
     )

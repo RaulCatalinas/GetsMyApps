@@ -1,7 +1,10 @@
 {
   "renderApps": {
     "error": "No se han encontrado aplicaciones que coincidan con su búsqueda",
-    "available": "Disponible para"
+    "available": "Disponible para:",
+    "coming-soon": "Próximamente",
+    "available-now": "Ya disponible",
+    "coming-soon-for": "Próximamente para:"
   },
   "dropdowns": {
     "language": {

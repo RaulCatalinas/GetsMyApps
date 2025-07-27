@@ -1,7 +1,10 @@
 {
   "renderApps": {
     "error": "No apps were found matching your search query",
-    "available": "Available for"
+    "available": "Available for",
+    "coming-soon": "Coming soon",
+    "available-now": "Available now",
+    "coming-soon-for": "Coming soon for:"
   },
   "dropdowns": {
     "language": {

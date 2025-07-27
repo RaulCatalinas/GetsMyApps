@@ -9,6 +9,7 @@ export type App = {
   logoURL: string
   name: string
   osArray: string[]
+  inDevelopment: boolean
 }
 
 export type AppWithOutID = Omit<App, 'id'>

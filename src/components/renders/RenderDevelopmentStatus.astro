@@ -1,0 +1,28 @@
+---
+import { getJson, getLangFromUrl } from '@/i18n/utils'
+
+interface Props {
+  i18nURL: URL
+  inDevelopment: boolean
+}
+
+const { i18nURL, inDevelopment } = Astro.props
+
+const lang = getLangFromUrl(i18nURL)
+const { renderApps } = getJson(lang)
+---
+
+<div class="flex justify-center m-1">
+  <span
+    class={`
+      px-4 py-2 rounded-full text-sm font-medium text-pretty
+      ${
+        inDevelopment
+          ? 'bg-yellow-100 text-yellow-800'
+          : 'bg-green-100 text-green-800'
+      }
+    `}
+  >
+    {inDevelopment ? renderApps['coming-soon'] : renderApps['available-now']}
+  </span>
+</div>

@@ -6,7 +6,7 @@ import type { AppWithOutID } from '@/types/app'
 
 // i18n
 import { getJson, getLangFromUrl } from '@/i18n/utils'
-import AppCard from './AppCard.astro'
+import AppCard from '../cards/AppCard.astro'
 
 interface Props {
   apps: AppWithOutID[]
@@ -38,7 +38,8 @@ const { renderApps } = getJson(lang)
             githubRepoName,
             logoURL,
             name,
-            osArray
+            osArray,
+            inDevelopment
           }) => (
             <AppCard
               alternativeText={alternativeText}
@@ -48,6 +49,7 @@ const { renderApps } = getJson(lang)
               name={name}
               osArray={osArray}
               i18nURL={i18nURL}
+              inDevelopment={inDevelopment}
             />
           )
         )}

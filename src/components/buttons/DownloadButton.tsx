@@ -10,6 +10,7 @@ import type { Language } from '@/types/language'
 interface Props {
   githubRepoName: string
   lang: Language
+  inDevelopment: boolean
 }
 
 export default function DownloadButton(props: Props) {
@@ -20,9 +21,19 @@ export default function DownloadButton(props: Props) {
   return (
     <button
       type="button"
-      class="bg-green-500 hover:bg-green-600 hover:scale-105 active:scale-90 text-black font-bold py-2 px-4 rounded w-full flex justify-center items-center hover:cursor-pointer transition-colors"
+      class={`
+        bg-green-500 hover:bg-green-600 hover:scale-105 active:scale-90 text-black 
+        font-bold py-2 px-4 rounded w-full flex justify-center items-center 
+        hover:cursor-pointer transition-colors
+        ${
+          props.inDevelopment
+            ? 'opacity-50 cursor-not-allowed'
+            : 'hover:cursor-pointer'
+        }
+      `}
       // eslint-disable-next-line @typescript-eslint/no-misused-promises
       onClick={handleClick}
+      disabled={props.inDevelopment}
     >
       <DownloadIcon />
       <span class="pl-2 text-2xl text-center">
