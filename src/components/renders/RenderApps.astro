@@ -32,24 +32,28 @@ const { renderApps } = getJson(lang)
     apps.length > 0 && (
       <div class="grid grid-cols-2 max-sm:grid-cols-1 mt-4 gap-4 place-items-center">
         {apps.map(
-          ({
-            alternativeText,
-            descriptions,
-            githubRepoName,
-            logoURL,
-            name,
-            osArray,
-            inDevelopment
-          }) => (
+          (
+            {
+              alternativeText,
+              descriptions,
+              githubRepoName,
+              logoURL,
+              name,
+              osArray,
+              inDevelopment
+            },
+            index
+          ) => (
             <AppCard
-              alternativeText={alternativeText}
-              descriptions={descriptions}
-              githubRepoName={githubRepoName}
-              logoURL={logoURL}
-              name={name}
-              osArray={osArray}
-              i18nURL={i18nURL}
-              inDevelopment={inDevelopment}
+              {alternativeText}
+              {descriptions}
+              {githubRepoName}
+              {logoURL}
+              {name}
+              {osArray}
+              {i18nURL}
+              {inDevelopment}
+              {index}
             />
           )
         )}

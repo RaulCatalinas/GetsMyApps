@@ -4,17 +4,22 @@ import { Image } from 'astro:assets'
 interface Props {
   logoURL: string
   alternativeText: string
+  index?: number
+  eagerCount?: number
 }
 
-const { logoURL, alternativeText } = Astro.props
+const { logoURL, alternativeText, index = 0, eagerCount = 2 } = Astro.props
+
+// Determinar loading strategy basado en el índice
+const loadingStrategy = index < eagerCount ? 'eager' : 'lazy'
 ---
 
 <Image
   src={logoURL}
   alt={alternativeText}
-  class="mx-auto m-3 flex items-center justify-center"
+  class="mx-auto m-3 flex items-center justify-center app-logo"
   width="125"
   height="125"
   decoding="async"
-  loading="eager"
+  loading={loadingStrategy}
 />
