@@ -16,6 +16,9 @@
     "dropdowns": {
       "contact": "Método de contacto",
       "language": "Seleccionar idioma"
+    },
+    "buttons": {
+      "source-code": "Ver código fuente"
     }
   },
   "modal": {
@@ -46,7 +49,8 @@
       "twitter": "Logo de Twitter",
       "instagram": "Logo de Instagram",
       "facebook": "Logo de Facebook",
-      "github": "Logo de Github"
+      "github": "Logo de Github",
+      "source-code": "Logo de ver el código fuente"
     }
   }
 }
