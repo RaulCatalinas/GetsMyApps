@@ -1,15 +1,13 @@
 ---
 // Components
 import AppCard from '../cards/AppCard.astro'
+import ScrollIndicator from '../indicators/ScrollIndicator.astro'
 
 // Types
 import type { AppWithOutID } from '@/types/app'
 
 // i18n
 import { getJson, getLangFromUrl } from '@/i18n/utils'
-
-// Icons
-import DownArrowIcon from '@/icons/arrows/DownArrowIcon.astro'
 
 interface Props {
   apps: AppWithOutID[]
@@ -61,62 +59,8 @@ const { renderApps } = getJson(lang)
           )
         )}
 
-        <div
-          class="
-            fixed 
-            bottom-8 
-            left-1/2 
-            transform 
-            -translate-x-1/2
-            bg-white/20 
-            backdrop-blur-sm 
-            rounded-full 
-            p-4
-            text-white
-            animate-bounce
-            cursor-pointer
-            hover:bg-white/30
-            hover:scale-110
-            transition-all
-            duration-300
-            shadow-lg
-            border
-            border-white/30
-            z-10
-          "
-          id="scroll-hint"
-        >
-          <div class="w-6 h-6 text-white">
-            <DownArrowIcon />
-          </div>
-        </div>
+        <ScrollIndicator />
       </div>
     )
   }
 </div>
-
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const scrollHint = document.getElementById('scroll-hint')
-
-    if (scrollHint) {
-      scrollHint.addEventListener('click', () => {
-        window.scrollBy({
-          top: window.innerHeight * 1,
-          behavior: 'smooth'
-        })
-      })
-
-      // Hide on scroll
-      window.addEventListener('scroll', () => {
-        if (window.scrollY > 100) {
-          scrollHint.style.opacity = '0'
-          scrollHint.style.transform = 'translateX(-50%) translateY(20px)'
-        } else {
-          scrollHint.style.opacity = '1'
-          scrollHint.style.transform = 'translateX(-50%) translateY(0)'
-        }
-      })
-    }
-  })
-</script>

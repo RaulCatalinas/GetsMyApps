@@ -1,0 +1,66 @@
+---
+import DownArrowIcon from '@/icons/arrows/DownArrowIcon.astro'
+---
+
+<div
+  class="fixed
+    bottom-8
+    left-1/2
+    transform
+    -translate-x-1/2
+    bg-white/30
+    backdrop-blur-sm
+    rounded-full
+    p-4
+    text-white
+    animate-bounce
+    cursor-pointer
+    hover:bg-white/40
+    hover:scale-110
+    transition-all
+    duration-300
+    shadow-lg
+    border
+    border-white/30
+    z-10"
+  id="scroll-hint"
+>
+  <div class="w-6 h-6 text-white">
+    <DownArrowIcon />
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const scrollHint = document.getElementById('scroll-hint')
+
+    if (scrollHint) {
+      const isAtBottom = () => {
+        const threshold = 50 // 50px de tolerancia
+
+        return (
+          window.innerHeight + window.scrollY >=
+          document.body.scrollHeight - threshold
+        )
+      }
+      scrollHint.addEventListener('click', () => {
+        window.scrollBy({
+          top: window.innerHeight * 1.08,
+          behavior: 'smooth'
+        })
+      })
+
+      // Hide on scroll
+      window.addEventListener('scroll', () => {
+        if (isAtBottom()) {
+          console.log('At bottom, hiding scroll hint')
+          scrollHint.style.opacity = '0'
+          scrollHint.style.transform = 'translateX(-50%) translateY(20px)'
+        } else {
+          scrollHint.style.opacity = '1'
+          scrollHint.style.transform = 'translateX(-50%) translateY(0)'
+        }
+      })
+    }
+  })
+</script>
