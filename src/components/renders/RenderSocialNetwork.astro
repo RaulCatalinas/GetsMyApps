@@ -5,9 +5,10 @@ interface Props {
   href: string
   imageURL: string
   altText: string
+  loading?: 'eager' | 'lazy'
 }
 
-const { href, imageURL, altText } = Astro.props
+const { href, imageURL, altText, loading = 'eager' } = Astro.props
 ---
 
 <a {href} target="_blank" rel="noopener noreferrer">
@@ -17,6 +18,7 @@ const { href, imageURL, altText } = Astro.props
     width={35}
     height={35}
     class="inline-block md:hover:cursor-pointer md:hover:scale-110 md:active:scale-90"
-    loading="eager"
+    decoding="async"
+    {loading}
   />
 </a>

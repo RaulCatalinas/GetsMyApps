@@ -4,12 +4,19 @@ import DownloadButton from '../buttons/DownloadButton'
 import RenderAppLogo from '../renders/RenderAppLogo.astro'
 import RenderDevelopmentStatus from '../renders/RenderDevelopmentStatus.astro'
 import RenderOS from '../renders/RenderOS.astro'
+import RenderSocialNetwork from '../renders/RenderSocialNetwork.astro'
 
 // Types
 import type { JsonDescriptions } from '@/types/json'
 
 // i18n
-import { getLangFromUrl } from '@/i18n/utils'
+import { getJson, getLangFromUrl } from '@/i18n/utils'
+
+// Services
+import { getRepoUrl } from '@/services/get-repo-url'
+
+// Utils
+import { getLoadingStrategy } from '@/utils/loading'
 
 interface Props {
   alternativeText: string
@@ -35,7 +42,15 @@ const {
   index = 0
 } = Astro.props
 
+const userAgent = Astro.request.headers.get('user-agent') ?? ''
+
+const loadingStrategy = getLoadingStrategy({ userAgent, index })
+
 const lang = getLangFromUrl(i18nURL)
+
+const { socialNetworks, labels } = getJson(lang)
+
+const repoUrl = await getRepoUrl(githubRepoName)
 ---
 
 <article
@@ -62,7 +77,19 @@ const lang = getLangFromUrl(i18nURL)
     <RenderAppLogo {logoURL} {alternativeText} {index} />
   </div>
 
-  <div class="pt-2">
+  <div class="flex flex-row items-center justify-center pt-2 gap-4">
+    <div class="flex flex-col items-center justify-center">
+      <p class="text-center text-pretty">
+        {labels.buttons['source-code']}
+      </p>
+      <RenderSocialNetwork
+        href={repoUrl}
+        imageURL="/social-networks/source-code.svg"
+        altText={socialNetworks.altText['source-code']}
+        loading={loadingStrategy}
+      />
+    </div>
+
     <DownloadButton {githubRepoName} {lang} {inDevelopment} client:load />
   </div>
 </article>

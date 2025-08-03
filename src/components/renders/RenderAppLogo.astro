@@ -1,39 +1,25 @@
 ---
+// Astro
 import { Image } from 'astro:assets'
+
+// Utils
+import { getLoadingStrategy } from '@/utils/loading'
 
 interface Props {
   logoURL: string
   alternativeText: string
   index?: number
-  eagerCount?: number
-  mobileEagerCount?: number
 }
 
-const {
-  logoURL,
-  alternativeText,
-  index = 0,
-  eagerCount = 2, // Desktop: 4 imágenes (2x2 grid)
-  mobileEagerCount = 1
-} = Astro.props
+const { logoURL, alternativeText, index = 0 } = Astro.props
 
 // Detectar móvil desde el User-Agent
-const userAgent = Astro.request.headers.get('user-agent') || ''
-const isMobile =
-  /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-    userAgent
-  )
+const userAgent = Astro.request.headers.get('user-agent') ?? ''
 
-// Ajustar eagerCount basado en el dispositivo
-const finalEagerCount = isMobile ? mobileEagerCount : eagerCount
-const loadingStrategy = index < finalEagerCount ? 'eager' : 'lazy'
+const loadingStrategy = getLoadingStrategy({ userAgent, index })
 ---
 
-<div
-  data-index={index}
-  data-mobile={isMobile}
-  data-eager-count={finalEagerCount}
->
+<div>
   <Image
     src={logoURL}
     alt={alternativeText}
