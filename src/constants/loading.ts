@@ -1,2 +1,7 @@
-export const MOBILE_EAGER_COUNT = 1
-export const DESKTOP_EAGER_COUNT = 2
+import type { LoadingEagerCuntMap } from '@/types/loading'
+
+export const LOADING_EAGER_COUNT_MAP = Object.freeze<LoadingEagerCuntMap>({
+  mobile: 1,
+  tablet: 4,
+  desktop: 2
+})

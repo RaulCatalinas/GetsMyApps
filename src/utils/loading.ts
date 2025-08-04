@@ -1,18 +1,28 @@
-import { DESKTOP_EAGER_COUNT, MOBILE_EAGER_COUNT } from '@/constants/loading'
-import { MOBILE_REGEX } from '@/constants/regex'
+// Utils
+import { getDeviceType } from './devices'
+
+// Constants
+import { LOADING_EAGER_COUNT_MAP } from '@/constants/loading'
+
+// Types
+import type { LoadingStrategy } from '@/types/loading'
 
 interface GetLoadingStrategyProps {
   userAgent: string
   index: number
+  hasSpecialIcons?: boolean
 }
 
 export function getLoadingStrategy({
   userAgent,
-  index
-}: GetLoadingStrategyProps) {
-  const isMobile = MOBILE_REGEX.test(userAgent)
+  index,
+  hasSpecialIcons
+}: GetLoadingStrategyProps): LoadingStrategy {
+  const deviceType = getDeviceType(userAgent)
 
-  const finalEagerCount = isMobile ? MOBILE_EAGER_COUNT : DESKTOP_EAGER_COUNT
+  if (hasSpecialIcons && deviceType !== 'mobile') {
+    return index < LOADING_EAGER_COUNT_MAP.desktop ? 'eager' : 'lazy'
+  }
 
-  return index < finalEagerCount ? 'eager' : 'lazy'
+  return index < LOADING_EAGER_COUNT_MAP[deviceType] ? 'eager' : 'lazy'
 }
