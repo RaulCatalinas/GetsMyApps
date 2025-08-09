@@ -16,7 +16,6 @@ export async function downloadController(githubRepoName: string) {
 
   try {
     downloadUrl = await getDownloadUrl(githubRepoName)
-    console.log(downloadUrl)
   } catch (error) {
     notify({
       text: controllers.download.error,
