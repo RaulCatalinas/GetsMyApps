@@ -56,7 +56,6 @@ import DownArrowIcon from '@/icons/arrows/DownArrowIcon.astro'
       // Hide on scroll
       window.addEventListener('scroll', () => {
         if (isAtBottom()) {
-          console.log('¡Has llegado al final de la página!')
           scrollHint.style.opacity = '0'
           scrollHint.style.transform = 'translateX(-50%) translateY(20px)'
         } else {
