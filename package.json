@@ -14,18 +14,18 @@
   "dependencies": {
     "@astrojs/check": "0.9.4",
     "@astrojs/sitemap": "3.5.1",
-    "@astrojs/solid-js": "5.1.0",
+    "@astrojs/solid-js": "5.1.1",
     "@astrojs/vercel": "8.2.7",
     "@libsql/client": "0.15.15",
     "@tailwindcss/vite": "4.1.13",
     "@vercel/speed-insights": "1.2.0",
-    "astro": "5.13.5",
+    "astro": "5.13.7",
     "astro-seo": "0.8.4",
     "octokit": "5.0.3",
     "solid-js": "1.9.9",
     "tailwindcss": "4.1.13",
     "toastify-js": "1.12.0",
-    "ua-parser-js": "2.0.4"
+    "ua-parser-js": "2.0.5"
   },
   "devDependencies": {
     "@s-ui/mono": "2.45.0",
