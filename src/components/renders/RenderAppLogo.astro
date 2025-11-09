@@ -13,10 +13,12 @@ interface Props {
 
 const { logoURL, alternativeText, index = 0 } = Astro.props
 
-// Detectar móvil desde el User-Agent
 const userAgent = Astro.request.headers.get('user-agent') ?? ''
 
-const loadingStrategy = getLoadingStrategy({ userAgent, index })
+const loadingStrategy = getLoadingStrategy({
+  userAgent,
+  index
+})
 ---
 
 <div>
