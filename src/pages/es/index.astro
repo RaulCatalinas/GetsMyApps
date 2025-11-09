@@ -7,9 +7,6 @@ import Layout from '@/layouts/Layout.astro'
 // Types
 import type { AppWithOutID } from '@/types/app'
 
-// Logs
-import { writeError } from '@/logs/logger'
-
 // API
 import { GET } from '../api/get-apps'
 
@@ -21,8 +18,6 @@ try {
 
   apps = await res.json()
 } catch (error) {
-  writeError(error)
-
   anErrorHasOccurred = true
 }
 

@@ -5,9 +5,6 @@ import { turso } from '@/config/turso'
 import type { AppWithOutID } from '@/types/app'
 import type { JsonDescriptions } from '@/types/json'
 
-// Logs
-import { writeError } from '@/logs/logger'
-
 // eslint-disable-next-line @typescript-eslint/no-invalid-void-type
 export async function getApps(): Promise<void | AppWithOutID[]> {
   try {
@@ -59,6 +56,6 @@ export async function getApps(): Promise<void | AppWithOutID[]> {
       })
     )
   } catch (error) {
-    writeError(error)
+    return undefined
   }
 }
