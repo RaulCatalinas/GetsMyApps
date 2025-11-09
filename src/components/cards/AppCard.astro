@@ -27,7 +27,7 @@ interface Props {
   osArray: string[]
   i18nURL: URL
   inDevelopment: boolean
-  index?: number
+  index: number
 }
 
 const {
@@ -39,15 +39,14 @@ const {
   osArray,
   i18nURL,
   inDevelopment,
-  index = 0
+  index
 } = Astro.props
 
 const userAgent = Astro.request.headers.get('user-agent') ?? ''
 
 const loadingStrategy = getLoadingStrategy({
   userAgent,
-  index,
-  hasSpecialIcons: true
+  index
 })
 
 const lang = getLangFromUrl(i18nURL)
@@ -63,8 +62,9 @@ const repoUrl = await getRepoUrl(githubRepoName)
     shadow-md
     m-1.5
     p-6
-    w-[calc(100%-4rem)]
-    min-lg:w-[calc(100%-10rem)]"
+    lg:w-auto
+    md:w-[calc(100%-3rem)]
+    max-sm:w-[calc(100%-4rem)]"
 >
   <h1 class="text-xl font-semibold text-center text-balance mb-3">
     {name}
