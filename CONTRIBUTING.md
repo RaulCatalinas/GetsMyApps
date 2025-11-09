@@ -5,18 +5,9 @@
 Contributions of all types are welcome, including:
 
 - Code
-- Testing
 - Translations
 - Bug reports
 - Suggestions
-
-## To-do's
-
-- [x] Creating the GUI using Tailwind for the styles
-- [ ] Add testing
-- [ ] Add download logic
-- [ ] Add Spanish translation
-- [ ] Adding logic to allow the user to change the language
 
 ## How to submit a contribution
 
