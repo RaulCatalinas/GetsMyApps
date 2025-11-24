@@ -31,7 +31,7 @@
     "@s-ui/mono": "2.45.0",
     "@types/toastify-js": "1.12.4",
     "eslint": "9.39.1",
-    "eslint-config-love": "133.0.0",
+    "eslint-config-love": "134.0.0",
     "eslint-plugin-astro": "1.5.0",
     "eslint-plugin-solid": "0.14.5",
     "markdownlint": "0.39.0",
