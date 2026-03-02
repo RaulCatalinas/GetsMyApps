@@ -30,7 +30,7 @@
   "devDependencies": {
     "@s-ui/mono": "2.45.0",
     "@types/toastify-js": "1.12.4",
-    "eslint": "10.0.1",
+    "eslint": "10.0.2",
     "eslint-config-love": "151.0.0",
     "eslint-plugin-astro": "1.6.0",
     "eslint-plugin-solid": "0.14.5",
