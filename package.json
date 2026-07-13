@@ -30,14 +30,14 @@
   "devDependencies": {
     "@s-ui/mono": "2.46.0",
     "@types/toastify-js": "1.12.4",
-    "eslint": "10.6.0",
+    "eslint": "10.7.0",
     "eslint-config-love": "154.0.0",
-    "eslint-plugin-astro": "2.1.1",
+    "eslint-plugin-astro": "3.0.0",
     "eslint-plugin-solid": "0.14.5",
-    "markdownlint": "0.41.0",
-    "prettier": "3.9.4",
+    "markdownlint": "0.41.1",
+    "prettier": "3.9.5",
     "prettier-plugin-astro": "0.14.1",
-    "typescript": "6.0.3"
+    "typescript": "7.0.2"
   },
   "trustedDependencies": [
     "@vercel/speed-insights",
